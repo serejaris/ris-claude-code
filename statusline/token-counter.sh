@@ -18,15 +18,17 @@ model="$(echo "$input" | jq -r '.model.display_name')"
 dir_name="$(basename "$current_dir")"
 
 # Extract context window data
-total_input="$(echo "$input" | jq -r '.context_window.total_input_tokens // 0')"
-total_output="$(echo "$input" | jq -r '.context_window.total_output_tokens // 0')"
 context_size="$(echo "$input" | jq -r '.context_window.context_window_size // 0')"
+current_usage="$(echo "$input" | jq '.context_window.current_usage')"
 
-# Calculate context usage percentage
+# Calculate context usage percentage using current_usage for accuracy
 context_pct=0
-if [ "$context_size" != "0" ] && [ "$context_size" != "null" ]; then
-    total_tokens=$((total_input + total_output))
-    context_pct=$(echo "scale=0; ($total_tokens * 100) / $context_size" | bc 2>/dev/null || echo "0")
+if [ "$current_usage" != "null" ] && [ "$context_size" != "0" ] && [ "$context_size" != "null" ]; then
+    # Sum all token types in current_usage: input, cache_creation, cache_read
+    current_tokens=$(echo "$current_usage" | jq '(.input_tokens // 0) + (.cache_creation_input_tokens // 0) + (.cache_read_input_tokens // 0)')
+    if [ "$current_tokens" != "null" ] && [ "$current_tokens" != "0" ]; then
+        context_pct=$(echo "scale=0; ($current_tokens * 100) / $context_size" | bc 2>/dev/null || echo "0")
+    fi
 fi
 
 # Get session data (these ARE available in statusline hook)
