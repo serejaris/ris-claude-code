@@ -14,6 +14,10 @@ A collection of customizations, scripts, and workflows for [Claude Code](https:/
 ### [Statusline](./statusline/)
 Custom statusline showing costs, context usage, and git branch with color-coded indicators.
 
+### [Skills](./skills/)
+Reusable skill templates for Claude Code. Currently includes:
+- **api-digest** — fetch raw API data and generate detailed digests without backend LLM costs
+
 ### [Hooks](./hooks/)
 *Coming soon* — Pre/post command hooks for automation.
 
