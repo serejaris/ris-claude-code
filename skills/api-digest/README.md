@@ -2,89 +2,79 @@
 
 A Claude Code skill that fetches raw data from any API and generates detailed digests — without paying for backend LLM calls.
 
-## Why This Exists
+## Structure
 
-Instead of:
 ```
-Backend → LLM API ($) → Short summary → User
-```
-
-This does:
-```
-Claude Code → Your API (free) → Detailed analysis → User
+api-digest/
+├── SKILL.md            # Instructions with links to other files
+├── fetch.sh            # Curl with credentials (isolated)
+└── output-template.md  # Output format template
 ```
 
-Claude processes raw data directly, giving you richer output at zero additional cost.
+**Why split?**
+- **Progressive disclosure** — Claude loads additional files only when needed
+- **Security** — credentials isolated in separate file
+- **Reusability** — output template can be changed independently
 
 ## Installation
 
-1. Copy the skill folder to your Claude skills directory:
-
 ```bash
 cp -r skills/api-digest ~/.claude/skills/
+chmod +x ~/.claude/skills/api-digest/fetch.sh
 ```
-
-2. Edit `~/.claude/skills/api-digest/SKILL.md`:
-   - Replace the curl command with your actual API endpoint
-   - Add your authentication (token, basic auth, etc.)
-   - Adjust field names to match your API response
-
-3. Restart Claude Code or start a new session
 
 ## Configuration
 
-### Authentication Examples
+### 1. Edit `fetch.sh`
 
-**Bearer Token:**
+Replace placeholders with your values:
+
 ```bash
-curl -s -H "Authorization: Bearer abc123" "https://api.example.com/messages"
+API_URL="https://your-api.com"
+RESOURCE_ID="123"
+USER="your-username"
+PASS="your-password"
+LIMIT=400
 ```
 
-**Basic Auth:**
+**Auth alternatives:**
+
 ```bash
-curl -s -u "user:pass" "https://api.example.com/messages"
+# Bearer token
+curl -s -H "Authorization: Bearer $TOKEN" "$API_URL/items"
+
+# API key
+curl -s -H "X-API-Key: $KEY" "$API_URL/items"
 ```
 
-**API Key in Header:**
-```bash
-curl -s -H "X-API-Key: abc123" "https://api.example.com/messages"
+### 2. Customize triggers (optional)
+
+Edit description in `SKILL.md` to change trigger words:
+
+```yaml
+description: Use when user asks for digest ("дайджест", "my-trigger-word")
 ```
 
-### API Response Mapping
+### 3. Modify output template (optional)
 
-The skill expects JSON with items containing text and author. Common field variations:
-
-| Expected | Alternatives |
-|----------|-------------|
-| `text` | `content`, `message`, `body` |
-| `author` | `user`, `username`, `sender`, `from` |
-| `created_at` | `timestamp`, `date`, `time` |
-
-Update the SKILL.md instructions if your API uses different field names.
+Edit `output-template.md` to match your needs.
 
 ## Usage
 
-Once installed, trigger with natural language:
-
+After installation, trigger with:
 - "дайджест" / "digest"
 - "саммари" / "summary"
 - "что нового" / "what's new"
 
-Claude will:
-1. Execute the curl command
-2. Parse the response
-3. Generate a structured digest
-
 ## Use Cases
 
-- **Chat digests**: Telegram, Slack, Discord exports
+- **Chat digests**: Telegram, Slack, Discord
 - **Ticket summaries**: Jira, Linear, GitHub Issues
 - **Log analysis**: Application logs, audit trails
-- **Comment threads**: PR reviews, forum discussions
-- **News feeds**: RSS aggregators, notification streams
+- **Comment threads**: PR reviews, forums
 
-## Security Notes
+## Security
 
-- Store credentials in the skill file (it's local to your machine)
+- Credentials stay local in `fetch.sh`
 - Don't commit configured skills with real credentials
 - Use read-only API tokens when possible

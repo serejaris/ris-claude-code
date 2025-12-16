@@ -1,90 +1,80 @@
 # API Digest Skill
 
-Скилл для Claude Code, который забирает сырые данные из любого API и генерирует детальные дайджесты — без платных LLM-вызовов на бэкенде.
+Скилл для Claude Code — забирает сырые данные из API и генерирует детальные дайджесты без платных LLM-вызовов.
 
-## Зачем это нужно
+## Структура
 
-Вместо:
 ```
-Бэкенд → LLM API ($) → Короткое саммари → Пользователь
-```
-
-Делаем:
-```
-Claude Code → Твой API (бесплатно) → Детальный анализ → Пользователь
+api-digest/
+├── SKILL.md            # Инструкции со ссылками на файлы
+├── fetch.sh            # Curl с credentials (изолированы)
+└── output-template.md  # Шаблон вывода
 ```
 
-Claude обрабатывает сырые данные напрямую — получаешь более богатый вывод без доп. затрат.
+**Зачем разделение?**
+- **Progressive disclosure** — Claude загружает доп. файлы только когда нужно
+- **Безопасность** — credentials в отдельном файле
+- **Переиспользование** — шаблон вывода можно менять независимо
 
 ## Установка
 
-1. Скопируй папку скилла в директорию скиллов Claude:
-
 ```bash
 cp -r skills/api-digest ~/.claude/skills/
+chmod +x ~/.claude/skills/api-digest/fetch.sh
 ```
 
-2. Отредактируй `~/.claude/skills/api-digest/SKILL.md`:
-   - Замени curl-команду на свой реальный API endpoint
-   - Добавь авторизацию (токен, basic auth и т.д.)
-   - Подправь имена полей под свой API
+## Настройка
 
-3. Перезапусти Claude Code или начни новую сессию
+### 1. Отредактируй `fetch.sh`
 
-## Конфигурация
+Замени плейсхолдеры на свои значения:
 
-### Примеры авторизации
-
-**Bearer Token:**
 ```bash
-curl -s -H "Authorization: Bearer abc123" "https://api.example.com/messages"
+API_URL="https://your-api.com"
+RESOURCE_ID="123"
+USER="your-username"
+PASS="your-password"
+LIMIT=400
 ```
 
-**Basic Auth:**
+**Альтернативные способы авторизации:**
+
 ```bash
-curl -s -u "user:pass" "https://api.example.com/messages"
+# Bearer token
+curl -s -H "Authorization: Bearer $TOKEN" "$API_URL/items"
+
+# API key
+curl -s -H "X-API-Key: $KEY" "$API_URL/items"
 ```
 
-**API Key в заголовке:**
-```bash
-curl -s -H "X-API-Key: abc123" "https://api.example.com/messages"
+### 2. Настрой триггеры (опционально)
+
+Измени description в `SKILL.md` чтобы добавить свои триггер-слова:
+
+```yaml
+description: Use when user asks for digest ("дайджест", "мой-триггер")
 ```
 
-### Маппинг полей API
+### 3. Измени шаблон вывода (опционально)
 
-Скилл ожидает JSON с items, содержащими текст и автора. Частые варианты полей:
-
-| Ожидается | Альтернативы |
-|-----------|-------------|
-| `text` | `content`, `message`, `body` |
-| `author` | `user`, `username`, `sender`, `from` |
-| `created_at` | `timestamp`, `date`, `time` |
-
-Обнови инструкции в SKILL.md, если твой API использует другие имена полей.
+Отредактируй `output-template.md` под свои нужды.
 
 ## Использование
 
-После установки триггерится естественным языком:
-
+После установки триггерится фразами:
 - "дайджест" / "digest"
 - "саммари" / "summary"
 - "что нового" / "what's new"
 
-Claude:
-1. Выполнит curl-команду
-2. Распарсит ответ
-3. Сгенерирует структурированный дайджест
+## Применение
 
-## Кейсы использования
-
-- **Дайджесты чатов**: Telegram, Slack, Discord экспорты
+- **Дайджесты чатов**: Telegram, Slack, Discord
 - **Саммари тикетов**: Jira, Linear, GitHub Issues
 - **Анализ логов**: Application logs, audit trails
 - **Треды комментариев**: PR reviews, форумы
-- **Новостные ленты**: RSS агрегаторы, уведомления
 
 ## Безопасность
 
-- Храни credentials в файле скилла (он локальный на твоей машине)
+- Credentials локально в `fetch.sh`
 - Не коммить настроенные скиллы с реальными credentials
 - Используй read-only токены где возможно
