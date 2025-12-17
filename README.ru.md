@@ -18,6 +18,7 @@
 Переиспользуемые шаблоны скиллов для Claude Code:
 - **api-digest** — забирает сырые данные из API и генерирует детальные дайджесты без платных LLM-вызовов
 - **gemini-tmux-orchestration** — делегирует задачи агенту Gemini CLI через tmux для параллельного выполнения
+- **git-workflow-manager** — обеспечивает conventional commits, semantic versioning и консистентные release notes
 
 ### [Hooks](./hooks/)
 *Скоро* — Pre/post хуки для автоматизации команд.

@@ -1,0 +1,64 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [1.4.0] - 2025-12-17
+
+### Added
+- **git-workflow-manager** skill for consistent commits, versioning, and releases
+- `CHANGELOG.md` with full version history
+- `CONTRIBUTING.md` with conventions and guidelines
+- `.github/release.yml` for auto-generated release notes
+- `.github/PULL_REQUEST_TEMPLATE.md` for PR consistency
+
+## [1.3.0] - 2025-12-17
+
+### Added
+- **gemini-tmux-orchestration** skill for delegating tasks to Gemini CLI agent via tmux
+  - Status markers for detecting Gemini state
+  - Smart polling instead of fixed sleep
+  - Loop detection handling
+  - Custom commands support
+
+## [1.2.1] - 2025-12-16
+
+### Changed
+- Refactored api-digest skill into multiple files (progressive disclosure)
+  - `SKILL.md` — instructions with file references
+  - `fetch.sh` — isolated credentials script
+  - `output-template.md` — customizable output format
+
+## [1.2.0] - 2025-12-16
+
+### Added
+- **api-digest** skill template for fetching raw API data and generating digests
+  - Support for any REST API with configurable auth
+  - Customizable output template
+  - Zero backend LLM costs
+
+## [1.1.0] - 2025-12-16
+
+### Changed
+- Improved context usage calculation in statusline
+  - Now uses `current_usage` object for accurate tracking
+  - Includes cache_creation and cache_read tokens
+
+## [1.0.0] - 2025-12-15
+
+### Added
+- Initial release
+- Custom statusline with cost tracking, context usage, git branch
+- Basic repository structure
+
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/serejaris/ris-claude-code/compare/v1.3.0...v1.4.0
+[1.3.0]: https://github.com/serejaris/ris-claude-code/compare/v1.2.1...v1.3.0
+[1.2.1]: https://github.com/serejaris/ris-claude-code/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/serejaris/ris-claude-code/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/serejaris/ris-claude-code/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/serejaris/ris-claude-code/releases/tag/v1.0.0

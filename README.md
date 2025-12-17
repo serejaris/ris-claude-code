@@ -18,6 +18,7 @@ Custom statusline showing costs, context usage, and git branch with color-coded 
 Reusable skill templates for Claude Code. Currently includes:
 - **api-digest** — fetch raw API data and generate detailed digests without backend LLM costs
 - **gemini-tmux-orchestration** — delegate tasks to Gemini CLI agent via tmux for parallel AI execution
+- **git-workflow-manager** — enforce conventional commits, semantic versioning, and consistent release notes
 
 ### [Hooks](./hooks/)
 *Coming soon* — Pre/post command hooks for automation.

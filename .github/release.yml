@@ -1,0 +1,32 @@
+changelog:
+  exclude:
+    labels:
+      - skip-changelog
+    authors:
+      - dependabot
+  categories:
+    - title: "🚀 New Features"
+      labels:
+        - enhancement
+        - feat
+    - title: "🐛 Bug Fixes"
+      labels:
+        - bug
+        - fix
+    - title: "📚 Documentation"
+      labels:
+        - documentation
+        - docs
+    - title: "🔧 Maintenance"
+      labels:
+        - chore
+        - refactor
+    - title: "🎯 Skills"
+      labels:
+        - skill
+    - title: "📊 Statusline"
+      labels:
+        - statusline
+    - title: "Other Changes"
+      labels:
+        - "*"
