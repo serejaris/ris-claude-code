@@ -17,8 +17,10 @@ Custom statusline showing costs, context usage, and git branch with color-coded 
 ### [Skills](./skills/)
 Reusable skill templates for Claude Code. Currently includes:
 - **api-digest** — fetch raw API data and generate detailed digests without backend LLM costs
+- **claude-md-writer** — create and refactor CLAUDE.md files following Anthropic best practices
 - **gemini-tmux-orchestration** — delegate tasks to Gemini CLI agent via tmux for parallel AI execution
 - **git-workflow-manager** — enforce conventional commits, semantic versioning, and consistent release notes
+- **macos-fixer** — diagnose macOS memory issues and suggest fixes
 
 ### [Hooks](./hooks/)
 *Coming soon* — Pre/post command hooks for automation.
