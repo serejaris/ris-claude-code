@@ -17,8 +17,10 @@
 ### [Skills](./skills/)
 Переиспользуемые шаблоны скиллов для Claude Code:
 - **api-digest** — забирает сырые данные из API и генерирует детальные дайджесты без платных LLM-вызовов
+- **claude-md-writer** — создаёт и рефакторит CLAUDE.md по best practices Anthropic
 - **gemini-tmux-orchestration** — делегирует задачи агенту Gemini CLI через tmux для параллельного выполнения
 - **git-workflow-manager** — обеспечивает conventional commits, semantic versioning и консистентные release notes
+- **macos-fixer** — диагностирует проблемы с памятью macOS и предлагает решения
 
 ### [Hooks](./hooks/)
 *Скоро* — Pre/post хуки для автоматизации команд.

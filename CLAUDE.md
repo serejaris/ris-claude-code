@@ -4,10 +4,11 @@ Collection of Claude Code customizations: skills, statusline, hooks.
 
 ## Critical Rules
 
-**ALWAYS update README.md when releasing:**
-- Adding/removing skills → update skills list in README.md
-- Adding/removing any component → update corresponding section in README.md
-- Release without README update = incomplete release
+**ALWAYS update BOTH READMEs when releasing:**
+- README.md (English) and README.ru.md (Russian)
+- Adding/removing skills → update skills list in both READMEs
+- Adding/removing any component → update corresponding section in both READMEs
+- Release without README updates = incomplete release
 
 ## Structure
 
