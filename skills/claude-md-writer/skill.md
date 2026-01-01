@@ -11,26 +11,50 @@ Creates and refactors CLAUDE.md files following official Anthropic best practice
 
 | Rule | Why |
 |------|-----|
-| **< 100 lines ideal, < 300 max** | Loads on EVERY request, costs tokens |
+| **CLAUDE.md < 200 lines** | Loads on EVERY request, costs tokens |
+| **Rules files < 500 lines each** | Official recommendation per file |
 | **Critical rules FIRST** | Top = highest priority |
 | **Modular rules → `.claude/rules/`** | Conditional loading, organized |
+| **Use `paths:` frontmatter** | Load rules only for matching files |
 | **No linting rules** | Use ESLint/Prettier/Biome instead |
-| **No code examples inline** | Reference files with `@path` |
 | **Pointers over copies** | Files change, references stay valid |
 
 ## Memory Hierarchy
 
-Claude Code loads memory in this order (later overrides earlier):
+Claude Code loads memory in this order (higher = higher priority):
 
-```
-1. Enterprise    /Library/Application Support/ClaudeCode/CLAUDE.md
-2. Project       ./CLAUDE.md or ./.claude/CLAUDE.md
-3. Rules         ./.claude/rules/*.md (conditional)
-4. User          ~/.claude/CLAUDE.md
-5. Local         ./CLAUDE.local.md (gitignored, personal)
-```
+| Priority | Type | Location |
+|----------|------|----------|
+| Highest | Enterprise | `/Library/Application Support/ClaudeCode/CLAUDE.md` |
+| ↓ | Project | `./CLAUDE.md` or `./.claude/CLAUDE.md` |
+| ↓ | Rules | `./.claude/rules/*.md` (conditional) |
+| ↓ | User | `~/.claude/CLAUDE.md` |
+| Lowest | Local | `./CLAUDE.local.md` (gitignored) |
 
 Use `/memory` command to see currently loaded files.
+
+## 3-Tier Documentation System
+
+Official recommendation for large projects:
+
+| Tier | Location | Loads | Target |
+|------|----------|-------|--------|
+| **1. Foundation** | `CLAUDE.md` | Always | < 200 lines |
+| **2. Component** | `.claude/rules/{component}/` | When working in component | < 500 lines |
+| **3. Feature** | Co-located with code | When working on feature | As needed |
+
+Example structure:
+```
+.claude/
+├── CLAUDE.md                 # Tier 1: always loaded
+└── rules/
+    ├── database.md           # Tier 2: SQL, migrations
+    ├── api.md                # Tier 2: API patterns
+    └── frontend/             # Tier 2: subdirectory
+        ├── components.md     # paths: src/**/*.tsx
+        ├── layout.md         # paths: src/pages/**/*.tsx
+        └── tokens.md         # paths: **/*.tsx
+```
 
 ## Structure Template
 
@@ -72,13 +96,13 @@ See `.claude/rules/` for:
 One line: Next.js 15, PostgreSQL, TypeScript
 ```
 
-## Conditional Rules
+## Conditional Rules (Path-Specific)
 
 Use YAML frontmatter for file-type-specific rules:
 
 ```markdown
 ---
-paths: src/api/**/*.ts
+paths: "src/api/**/*.ts"
 ---
 
 # API Rules
@@ -87,7 +111,28 @@ paths: src/api/**/*.ts
 - Use standard error format
 ```
 
-Rules with `paths:` only load when working in matching files.
+### Glob Patterns
+
+| Pattern | Matches |
+|---------|---------|
+| `**/*.ts` | All .ts files anywhere |
+| `src/**/*` | All files under src/ |
+| `*.md` | Markdown in project root |
+| `src/components/*.tsx` | Components in specific dir |
+
+### Combining Patterns
+
+```yaml
+# Multiple extensions
+paths: "src/**/*.{ts,tsx}"
+
+# Multiple directories
+paths: "{src,lib}/**/*.ts, tests/**/*.test.ts"
+```
+
+**Note:** Wrap patterns in quotes for YAML safety.
+
+Rules with `paths:` only load when working with matching files → saves tokens.
 
 ## Workflow: New Project
 
@@ -166,14 +211,16 @@ Personal project settings (auto-gitignored):
 
 Before finishing:
 
-- [ ] < 100 lines? (< 300 acceptable)
+- [ ] CLAUDE.md < 200 lines?
+- [ ] Each rules file < 500 lines?
 - [ ] Critical rules at top?
-- [ ] No task-specific content?
-- [ ] No code style rules?
-- [ ] `.claude/rules/` created for details?
-- [ ] `@` references where possible?
+- [ ] No task-specific content in main file?
+- [ ] No code style rules (use ESLint/Prettier)?
+- [ ] `.claude/rules/` for domain-specific docs?
+- [ ] Subdirectories for components (frontend/, backend/)?
+- [ ] `paths:` frontmatter for conditional loading?
+- [ ] `@` references instead of duplication?
 - [ ] CLAUDE.local.md for personal prefs?
-- [ ] Conditional rules use `paths:` frontmatter?
 
 ## Useful Commands
 
@@ -184,7 +231,14 @@ Before finishing:
 
 ## Sources
 
+Official:
+- code.claude.com/docs/en/memory (Memory management, paths, globs)
 - anthropic.com/engineering/claude-code-best-practices
-- code.claude.com/docs/en/memory
-- HumanLayer: Writing a Good CLAUDE.md
-- Arize: CLAUDE.md Best Practices from Prompt Learning
+- claude.com/blog/using-claude-md-files
+
+Community:
+- thedocumentation.org/claude-code-development-kit (3-Tier System)
+- claudefa.st/blog/guide/mechanics/rules-directory
+- humanlayer.dev/blog/writing-a-good-claude-md
+
+Updated: Jan 2026
