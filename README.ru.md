@@ -21,6 +21,7 @@
 - **gemini-tmux-orchestration** — делегирует задачи агенту Gemini CLI через tmux для параллельного выполнения
 - **git-workflow-manager** — обеспечивает conventional commits, semantic versioning и консистентные release notes
 - **macos-fixer** — диагностирует проблемы с памятью macOS и предлагает решения
+- **project-release** — консистентный workflow релизов с версионированием, changelog и GitHub releases
 
 ### [Hooks](./hooks/)
 *Скоро* — Pre/post хуки для автоматизации команд.

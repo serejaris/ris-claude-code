@@ -21,6 +21,7 @@ Reusable skill templates for Claude Code. Currently includes:
 - **gemini-tmux-orchestration** — delegate tasks to Gemini CLI agent via tmux for parallel AI execution
 - **git-workflow-manager** — enforce conventional commits, semantic versioning, and consistent release notes
 - **macos-fixer** — diagnose macOS memory issues and suggest fixes
+- **project-release** — consistent release workflow with versioning, changelog, and GitHub releases
 
 ### [Hooks](./hooks/)
 *Coming soon* — Pre/post command hooks for automation.
