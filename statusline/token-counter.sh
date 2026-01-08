@@ -41,10 +41,11 @@ git_branch="$(cd "$current_dir" 2>/dev/null && git branch --show-current 2>/dev/
 # Function to format cost with dollar sign
 format_cost() {
     local cost="$1"
-    if [ "$cost" = "null" ] || [ -z "$cost" ] || [ "$cost" = "0" ]; then
+    if [ "$cost" = "null" ] || [ -z "$cost" ]; then
         echo "\$0.00"
     else
-        printf "\$%.2f" "$cost" 2>/dev/null || echo "\$0.00"
+        # Use awk for reliable number formatting (works with any locale)
+        echo "$cost" | LC_ALL=C awk '{printf "$%.2f", $1}'
     fi
 }
 
