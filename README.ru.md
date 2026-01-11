@@ -19,9 +19,12 @@
 - **api-digest** — забирает сырые данные из API и генерирует детальные дайджесты без платных LLM-вызовов
 - **claude-md-writer** — создаёт и рефакторит CLAUDE.md по best practices Anthropic
 - **gemini-tmux-orchestration** — делегирует задачи агенту Gemini CLI через tmux для параллельного выполнения
+- **gh-issues** — управление GitHub Issues через CLI с хранением AI-контекста сессий
 - **git-workflow-manager** — обеспечивает conventional commits, semantic versioning и консистентные release notes
 - **macos-fixer** — диагностирует проблемы с памятью macOS и предлагает решения
+- **opencode-config** — настройка OpenCode CLI с кастомными провайдерами и моделями
 - **project-release** — консистентный workflow релизов с версионированием, changelog и GitHub releases
+- **readme-generator** — создаёт человеко-ориентированные README с правильной структурой
 
 ### [Hooks](./hooks/)
 *Скоро* — Pre/post хуки для автоматизации команд.

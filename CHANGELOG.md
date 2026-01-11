@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-01-11
+
+### Added
+- **gh-issues** skill for GitHub Issues management via CLI
+  - Full `gh issue` command reference with JSON/jq patterns
+  - AI session context storage in issue comments
+  - Task workflow with labels (backlog → in-progress → done)
+  - Context template for seamless handoff
+- **opencode-config** skill for OpenCode CLI configuration
+  - Config locations and priorities
+  - Custom provider setup with OpenAI-compatible APIs
+  - Mode-specific model configuration
+- **readme-generator** skill for human-focused README creation
+  - Research-first approach with best practices
+  - Project type-specific sections
+  - Writing style guidelines
+
 ## [1.6.0] - 2026-01-02
 
 ### Added
@@ -85,7 +102,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.6.0...HEAD
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.7.0...HEAD
+[1.7.0]: https://github.com/serejaris/ris-claude-code/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/serejaris/ris-claude-code/compare/v1.5.1...v1.6.0
 [1.5.1]: https://github.com/serejaris/ris-claude-code/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/serejaris/ris-claude-code/compare/v1.4.0...v1.5.0

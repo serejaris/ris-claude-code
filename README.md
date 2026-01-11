@@ -19,9 +19,12 @@ Reusable skill templates for Claude Code. Currently includes:
 - **api-digest** — fetch raw API data and generate detailed digests without backend LLM costs
 - **claude-md-writer** — create and refactor CLAUDE.md files following Anthropic best practices
 - **gemini-tmux-orchestration** — delegate tasks to Gemini CLI agent via tmux for parallel AI execution
+- **gh-issues** — manage GitHub Issues via CLI with AI session context storage
 - **git-workflow-manager** — enforce conventional commits, semantic versioning, and consistent release notes
 - **macos-fixer** — diagnose macOS memory issues and suggest fixes
+- **opencode-config** — configure OpenCode CLI with custom providers and models
 - **project-release** — consistent release workflow with versioning, changelog, and GitHub releases
+- **readme-generator** — create human-focused README files with proper structure
 
 ### [Hooks](./hooks/)
 *Coming soon* — Pre/post command hooks for automation.
