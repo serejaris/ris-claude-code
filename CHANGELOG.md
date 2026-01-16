@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **cc-analytics** skill for Claude Code usage statistics
+  - Parse `~/.claude/history.jsonl` for prompts and projects
+  - Git integration for commit counts and remote URLs
+  - Terminal-style HTML report with ASCII aesthetics
+
 ## [1.7.0] - 2026-01-11
 
 ### Added

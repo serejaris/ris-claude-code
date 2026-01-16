@@ -17,6 +17,7 @@
 ### [Skills](./skills/)
 Переиспользуемые шаблоны скиллов для Claude Code:
 - **api-digest** — забирает сырые данные из API и генерирует детальные дайджесты без платных LLM-вызовов
+- **cc-analytics** — генерирует HTML-отчёты статистики использования Claude Code
 - **claude-md-writer** — создаёт и рефакторит CLAUDE.md по best practices Anthropic
 - **gemini-tmux-orchestration** — делегирует задачи агенту Gemini CLI через tmux для параллельного выполнения
 - **gh-issues** — управление GitHub Issues через CLI с хранением AI-контекста сессий
