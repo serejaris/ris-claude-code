@@ -1,41 +1,37 @@
-# Token Counter Statusline
+# Statusline
 
 [![en](https://img.shields.io/badge/lang-en-blue.svg)](README.md)
 [![ru](https://img.shields.io/badge/lang-ru-green.svg)](README.ru.md)
 
-Custom statusline for Claude Code showing session costs, context usage, and git branch.
+Custom statusline for Claude Code showing OAuth rate limits, session cost, and context usage.
 
 ## Preview
 
 ```
-project (main) • Opus 4.5 • $0.42 • $3.15 / $127.50 • 23%
+project (main) • Opus 4.5 • 2h15m 67% W85% • $0.42 • 23%
 ```
 
 - **project** — Current directory name
 - **(main)** — Git branch (if in repo)
 - **Opus 4.5** — Current model
+- **2h15m 67%** — Time until 5-hour limit reset + remaining % (color-coded)
+- **W85%** — Weekly limit remaining %
 - **$0.42** — Session cost (green)
-- **$3.15** — Today's cost
-- **$127.50** — Total cost (dimmed)
 - **23%** — Context window usage (green/yellow/red based on %)
 
 ## Requirements
 
 - `jq` — JSON processing
-- `bc` — Calculations
-- `bun` — For running ccusage
-- [`ccusage`](https://github.com/ryoppippi/ccusage) — Claude Code usage tracker
+- `curl` — API requests
+- `python3` — Time calculations
+- macOS Keychain — For OAuth token access
 
 ### Install dependencies
 
 ```bash
 # macOS
-brew install jq bc
-
-# bun (if not installed)
-curl -fsSL https://bun.sh/install | bash
-
-# ccusage runs via bunx, no install needed
+brew install jq
+# python3 and curl are pre-installed on macOS
 ```
 
 ## Installation
@@ -43,8 +39,8 @@ curl -fsSL https://bun.sh/install | bash
 1. Copy script to Claude config:
 
 ```bash
-cp token-counter.sh ~/.claude/
-chmod +x ~/.claude/token-counter.sh
+cp statusline.sh ~/.claude/
+chmod +x ~/.claude/statusline.sh
 ```
 
 2. Add to `~/.claude/settings.json`:
@@ -53,7 +49,7 @@ chmod +x ~/.claude/token-counter.sh
 {
   "statusLine": {
     "type": "command",
-    "command": "bash ~/.claude/token-counter.sh"
+    "command": "bash ~/.claude/statusline.sh"
   }
 }
 ```
@@ -62,21 +58,23 @@ chmod +x ~/.claude/token-counter.sh
 
 ## Color Coding
 
-**Context usage:**
-- Green: < 30%
-- Yellow: 30-60%
-- Red: > 60%
+**Usage limits (remaining %):**
+- White: > 50%
+- Yellow: 20-50%
+- Red: < 20%
 
-**Costs:**
-- Session cost is green
-- Total is dimmed for less visual noise
+**Context usage:**
+- Green: < 50%
+- Yellow: 50-80%
+- Red: > 80%
 
 ## How It Works
 
-The script receives JSON from Claude Code via stdin containing:
-- Workspace info (current directory)
-- Model name
-- Context window stats (input/output tokens, window size)
-- Session cost and duration
+The script:
+1. Receives JSON from Claude Code via stdin (workspace, model, context, cost)
+2. Fetches OAuth rate limits from Anthropic API (cached for 2 minutes)
+3. Calculates remaining % for 5-hour and weekly limits
+4. Shows countdown timer to 5-hour limit reset
+5. Formats everything with ANSI colors
 
-It combines this with `ccusage` data for today/total costs and formats everything with ANSI colors.
+OAuth token is retrieved from macOS Keychain (`Claude Code-credentials`).
