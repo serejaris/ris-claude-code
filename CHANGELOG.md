@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.10.0] - 2026-02-05
+
+### Added
+- **agent-teams** skill for orchestrating multiple autonomous agents
+  - Shared task lists and direct inter-agent messaging
+  - Teams vs subagents decision flowchart
+  - Full lifecycle: spawn, assign, monitor, shutdown
+  - Best practices for task sizing, file ownership, spawn prompts
+
 ## [1.9.0] - 2026-02-02
 
 ### Changed
@@ -120,7 +129,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.9.0...HEAD
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.10.0...HEAD
+[1.10.0]: https://github.com/serejaris/ris-claude-code/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/serejaris/ris-claude-code/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/serejaris/ris-claude-code/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/serejaris/ris-claude-code/compare/v1.6.0...v1.7.0

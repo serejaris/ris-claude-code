@@ -16,6 +16,7 @@ Custom statusline showing costs, context usage, and git branch with color-coded 
 
 ### [Skills](./skills/)
 Reusable skill templates for Claude Code. Currently includes:
+- **agent-teams** — orchestrate multiple autonomous agents with shared task lists and direct messaging
 - **api-digest** — fetch raw API data and generate detailed digests without backend LLM costs
 - **cc-analytics** — generate HTML reports of Claude Code usage statistics
 - **claude-md-writer** — create and refactor CLAUDE.md files following Anthropic best practices
