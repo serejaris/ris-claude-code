@@ -21,15 +21,6 @@ When you ask an AI for strategic advice, you get one opinion — polished, struc
 6. Synthesize: consensus + disagreements + decisions
 ```
 
-## Council vs Agent Teams
-
-| | Agent Teams | CEO Council |
-|---|-----------|-------------|
-| Purpose | Collaborative work | Independent opinions |
-| Communication | Agents talk to each other | Agents work in isolation |
-| Output | Coordinated deliverable | Diverse perspectives |
-| Best for | Building features | Making decisions |
-
 ## Structure
 
 ```
