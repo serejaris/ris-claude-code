@@ -18,6 +18,7 @@ Custom statusline showing costs, context usage, and git branch with color-coded 
 Reusable skill templates for Claude Code. Currently includes:
 - **agent-teams** — orchestrate multiple autonomous agents with shared task lists and direct messaging
 - **api-digest** — fetch raw API data and generate detailed digests without backend LLM costs
+- **ceo-council** — launch parallel sub-agents as independent C-level experts for strategic project analysis
 - **cc-analytics** — generate HTML reports of Claude Code usage statistics
 - **claude-md-writer** — create and refactor CLAUDE.md files following Anthropic best practices
 - **gemini-tmux-orchestration** — delegate tasks to Gemini CLI agent via tmux for parallel AI execution

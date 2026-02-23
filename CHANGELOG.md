@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.11.0] - 2026-02-23
+
+### Added
+- **ceo-council** skill for independent strategic analysis
+  - Parallel Opus sub-agents as C-level experts (CFO, CPO, CTO, etc.)
+  - Auto-generates roles tailored to project domain
+  - Isolation-based analysis: each expert works independently
+  - Synthesis with consensus, disagreements, and decisions
+
 ## [1.10.0] - 2026-02-05
 
 ### Added
@@ -129,7 +138,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.10.0...HEAD
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.11.0...HEAD
+[1.11.0]: https://github.com/serejaris/ris-claude-code/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/serejaris/ris-claude-code/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/serejaris/ris-claude-code/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/serejaris/ris-claude-code/compare/v1.7.0...v1.8.0
