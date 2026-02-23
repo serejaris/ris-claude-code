@@ -16,18 +16,18 @@
 
 ### [Skills](./skills/)
 Переиспользуемые шаблоны скиллов для Claude Code:
-- **agent-teams** — оркестрация нескольких автономных агентов с общим списком задач и прямым обменом сообщениями
-- **api-digest** — забирает сырые данные из API и генерирует детальные дайджесты без платных LLM-вызовов
-- **ceo-council** — запуск параллельных субагентов в роли независимых C-level экспертов для стратегического анализа
-- **cc-analytics** — генерирует HTML-отчёты статистики использования Claude Code
-- **claude-md-writer** — создаёт и рефакторит CLAUDE.md по best practices Anthropic
-- **gemini-tmux-orchestration** — делегирует задачи агенту Gemini CLI через tmux для параллельного выполнения
-- **gh-issues** — управление GitHub Issues через CLI с хранением AI-контекста сессий
-- **git-workflow-manager** — обеспечивает conventional commits, semantic versioning и консистентные release notes
-- **macos-fixer** — диагностирует проблемы с памятью macOS и предлагает решения
-- **opencode-config** — настройка OpenCode CLI с кастомными провайдерами и моделями
-- **project-release** — консистентный workflow релизов с версионированием, changelog и GitHub releases
-- **readme-generator** — создаёт человеко-ориентированные README с правильной структурой
+- [**agent-teams**](./skills/agent-teams/) — оркестрация нескольких автономных агентов с общим списком задач и прямым обменом сообщениями
+- [**api-digest**](./skills/api-digest/) — забирает сырые данные из API и генерирует детальные дайджесты без платных LLM-вызовов
+- [**cc-analytics**](./skills/cc-analytics/) — генерирует HTML-отчёты статистики использования Claude Code
+- [**ceo-council**](./skills/ceo-council/) — запуск параллельных субагентов в роли независимых C-level экспертов для стратегического анализа
+- [**claude-md-writer**](./skills/claude-md-writer/) — создаёт и рефакторит CLAUDE.md по best practices Anthropic
+- [**gemini-tmux-orchestration**](./skills/gemini-tmux-orchestration/) — делегирует задачи агенту Gemini CLI через tmux для параллельного выполнения
+- [**gh-issues**](./skills/gh-issues/) — управление GitHub Issues через CLI с хранением AI-контекста сессий
+- [**git-workflow-manager**](./skills/git-workflow-manager/) — обеспечивает conventional commits, semantic versioning и консистентные release notes
+- [**macos-fixer**](./skills/macos-fixer/) — диагностирует проблемы с памятью macOS и предлагает решения
+- [**opencode-config**](./skills/opencode-config/) — настройка OpenCode CLI с кастомными провайдерами и моделями
+- [**project-release**](./skills/project-release/) — консистентный workflow релизов с версионированием, changelog и GitHub releases
+- [**readme-generator**](./skills/readme-generator/) — создаёт человеко-ориентированные README с правильной структурой
 
 ### [Hooks](./hooks/)
 *Скоро* — Pre/post хуки для автоматизации команд.

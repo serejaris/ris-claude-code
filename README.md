@@ -16,18 +16,18 @@ Custom statusline showing costs, context usage, and git branch with color-coded 
 
 ### [Skills](./skills/)
 Reusable skill templates for Claude Code. Currently includes:
-- **agent-teams** — orchestrate multiple autonomous agents with shared task lists and direct messaging
-- **api-digest** — fetch raw API data and generate detailed digests without backend LLM costs
-- **ceo-council** — launch parallel sub-agents as independent C-level experts for strategic project analysis
-- **cc-analytics** — generate HTML reports of Claude Code usage statistics
-- **claude-md-writer** — create and refactor CLAUDE.md files following Anthropic best practices
-- **gemini-tmux-orchestration** — delegate tasks to Gemini CLI agent via tmux for parallel AI execution
-- **gh-issues** — manage GitHub Issues via CLI with AI session context storage
-- **git-workflow-manager** — enforce conventional commits, semantic versioning, and consistent release notes
-- **macos-fixer** — diagnose macOS memory issues and suggest fixes
-- **opencode-config** — configure OpenCode CLI with custom providers and models
-- **project-release** — consistent release workflow with versioning, changelog, and GitHub releases
-- **readme-generator** — create human-focused README files with proper structure
+- [**agent-teams**](./skills/agent-teams/) — orchestrate multiple autonomous agents with shared task lists and direct messaging
+- [**api-digest**](./skills/api-digest/) — fetch raw API data and generate detailed digests without backend LLM costs
+- [**cc-analytics**](./skills/cc-analytics/) — generate HTML reports of Claude Code usage statistics
+- [**ceo-council**](./skills/ceo-council/) — launch parallel sub-agents as independent C-level experts for strategic project analysis
+- [**claude-md-writer**](./skills/claude-md-writer/) — create and refactor CLAUDE.md files following Anthropic best practices
+- [**gemini-tmux-orchestration**](./skills/gemini-tmux-orchestration/) — delegate tasks to Gemini CLI agent via tmux for parallel AI execution
+- [**gh-issues**](./skills/gh-issues/) — manage GitHub Issues via CLI with AI session context storage
+- [**git-workflow-manager**](./skills/git-workflow-manager/) — enforce conventional commits, semantic versioning, and consistent release notes
+- [**macos-fixer**](./skills/macos-fixer/) — diagnose macOS memory issues and suggest fixes
+- [**opencode-config**](./skills/opencode-config/) — configure OpenCode CLI with custom providers and models
+- [**project-release**](./skills/project-release/) — consistent release workflow with versioning, changelog, and GitHub releases
+- [**readme-generator**](./skills/readme-generator/) — create human-focused README files with proper structure
 
 ### [Hooks](./hooks/)
 *Coming soon* — Pre/post command hooks for automation.
