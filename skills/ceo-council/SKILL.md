@@ -5,26 +5,7 @@ description: Use when needing strategic project analysis from multiple independe
 
 # CEO Council — Independent Strategic Analysis
 
-Launch a council of C-level experts as parallel sub-agents. Each analyzes the same project data from their perspective, in isolation. Then synthesize consensus and disagreements.
-
-**Key difference from Agent Teams:** Teams coordinate and share state. Council members work independently — isolation produces genuine diversity of opinion.
-
-```
-AGENT TEAMS                     CEO COUNCIL
------------                     -----------
-
-+---------+  +---------+       +---------+
-| Agent 1 |  | Agent 2 |      | Expert 1 |---- independent
-| backend |  | frontend|      | CFO      |
-+----+----+  +----+----+      +----------+
-     |             |
-     +--- shared --+           +---------+
-          task list            | Expert 2 |---- independent
-                               | CPO      |
-                               +----------+
-
-Result: coordinated output     Result: diverse opinions
-```
+Launch parallel sub-agents as isolated C-level experts. Each analyzes the same project data from their perspective. No coordination between experts — isolation produces genuine diversity of opinion. Then synthesize consensus and disagreements.
 
 ## Step 1: Scan Project Context
 
@@ -44,9 +25,9 @@ Prompt: "Who should join the council?" — show 4-6 options with short descripti
 
 **Minimum 2 experts.** If user picks 1, suggest adding at least one more for productive disagreement.
 
-### Role Generation by Project Type
+### Role Examples by Project Type
 
-**Don't copy these lists** — generate fresh roles based on actual project context. These are patterns, not templates:
+**Don't copy these** — generate fresh roles based on actual project context:
 
 | Project Type | Typical Roles |
 |-------------|--------------|
@@ -59,7 +40,7 @@ Prompt: "Who should join the council?" — show 4-6 options with short descripti
 
 ## Step 3: Gather Current Data
 
-Collect project state to feed all experts equally. What to read depends on project type:
+Collect project state to feed all experts equally:
 
 1. Key metrics/data files identified during context scan
 2. Strategy and planning documents
@@ -124,8 +105,7 @@ After all experts report, create a synthesis:
 ## Disagreements
 | Expert | Position | Argument |
 |--------|----------|----------|
-| CFO | ... | ... |
-| CPO | ... | ... |
+| ... | ... | ... |
 
 ## Decisions
 _To be filled after discussion._
