@@ -7,6 +7,23 @@ description: Use when needing strategic project analysis from multiple independe
 
 Launch parallel sub-agents as isolated C-level experts. Each analyzes the same project data from their perspective. No coordination between experts — isolation produces genuine diversity of opinion. Then synthesize consensus and disagreements.
 
+## Critical: How to Launch Experts
+
+**MUST use the Task tool** with `subagent_type: "general-purpose"` and `model: "opus"`.
+
+```
+Task(
+  subagent_type: "general-purpose",
+  model: "opus",
+  prompt: "<expert prompt with data>",
+  description: "CFO analysis"
+)
+```
+
+**DO NOT** use bash, shell scripts, or background commands to launch experts. They will fail.
+
+Launch all experts in a **single message with multiple Task tool calls** for true parallelism.
+
 ## Step 1: Scan Project Context
 
 Before suggesting experts, understand the project:
@@ -19,11 +36,12 @@ Based on findings, **generate 4-6 expert roles tailored to THIS project**. Roles
 
 ## Step 2: Assemble the Council
 
-Present generated roles to user via `AskUserQuestion` with `multiSelect: true`.
+**MANDATORY: Ask the user before proceeding.** Do not pick roles yourself.
 
-Prompt: "Who should join the council?" — show 4-6 options with short descriptions. User can pick "Other" to define custom roles.
-
-**Minimum 2 experts.** If user picks 1, suggest adding at least one more for productive disagreement.
+Use `AskUserQuestion` with `multiSelect: true`:
+- Show 4-6 role options with short descriptions of their focus
+- User can always pick "Other" to define custom roles
+- **Minimum 2 experts.** If user picks 1, suggest adding one more for productive disagreement
 
 ### Role Examples by Project Type
 
@@ -40,18 +58,21 @@ Prompt: "Who should join the council?" — show 4-6 options with short descripti
 
 ## Step 3: Gather Current Data
 
-Collect project state to feed all experts equally:
+Collect project state to feed all experts. Stay focused on what's relevant:
 
-1. Key metrics/data files identified during context scan
-2. Strategy and planning documents
-3. Recent decisions or changes (git log, issues)
-4. Previous council analyses (if any exist)
+**Read:**
+- Key metrics/data files identified during context scan
+- Strategy and planning documents
+- Recent decisions or changes (git log --oneline -10)
+- Previous council analyses (if any)
 
-**All experts must receive identical data context.**
+**Skip:** GitHub traffic stats, stargazer counts, clone data, contributor lists — these are vanity metrics, not strategic data.
+
+**All experts must receive identical data context.** Prepare the data block ONCE, then paste it into each expert prompt.
 
 ## Step 4: Generate Expert Prompts
 
-For each selected expert, create a prompt:
+For each selected expert, create a prompt with the SAME data block:
 
 ```
 You are the [ROLE] for [PROJECT NAME]. Analyze the data below from a [DOMAIN] perspective.
@@ -60,7 +81,7 @@ Focus on:
 - [3-6 specific focus areas relevant to role and project]
 
 Data:
-[CURRENT PROJECT DATA]
+[CURRENT PROJECT DATA — identical for all experts]
 
 [Role-specific instruction: "show the math", "be the contrarian", "prioritize by effort/impact", etc.]
 
@@ -68,20 +89,29 @@ Respond in the same language as the data provided.
 ```
 
 **Rules:**
-- Each expert gets the SAME data
+- Each expert gets the SAME data block — prepare it once, reuse
 - Focus areas must be specific to the project, not generic
 - Include a personality instruction (contrarian, pragmatic, data-driven)
 - Mention project constraints the expert should know
 
 ## Step 5: Execute
 
-Launch selected experts as **parallel Opus sub-agents** using the Task tool with `subagent_type: "general-purpose"` and `model: "opus"`.
+Launch ALL selected experts in **one message** using multiple Task tool calls:
 
-Each sub-agent runs independently. Wait for all to complete.
+```
+# In a single response, call Task for each expert:
+Task(subagent_type: "general-purpose", model: "opus", prompt: "<CFO prompt>", description: "CFO analysis")
+Task(subagent_type: "general-purpose", model: "opus", prompt: "<CPO prompt>", description: "CPO analysis")
+Task(subagent_type: "general-purpose", model: "opus", prompt: "<CTO prompt>", description: "CTO analysis")
+```
+
+Wait for all experts to return results before proceeding to synthesis.
 
 ## Step 6: Synthesize
 
-After all experts report, create a synthesis:
+**Do not skip this step.** The synthesis is the entire value of the council.
+
+After all experts report, create a synthesis document:
 
 ```markdown
 # Council Session: [DATE]
@@ -90,7 +120,7 @@ After all experts report, create a synthesis:
 [List of selected experts and their focus]
 
 ## Context
-[Current metrics/state snapshot]
+[Current metrics/state snapshot — brief]
 
 ## [Expert 1 Name]
 [Key findings and recommendations]
@@ -121,8 +151,9 @@ Save to a logical location:
 
 | Mistake | Fix |
 |---------|-----|
-| Generic roles not tied to project | Scan context first, tailor roles |
-| Experts see different data | Always pass identical context |
+| Picking roles without asking user | ALWAYS use AskUserQuestion first |
+| Using bash to launch experts | ONLY use Task tool with subagent_type: "general-purpose" |
+| Giving experts different data | Prepare ONE data block, paste into all prompts |
+| Gathering vanity metrics | Focus on project docs, strategy, actual metrics |
 | Too many experts (6+) | 3-4 is optimal for signal-to-noise |
-| Skipping synthesis | The synthesis IS the value — don't skip |
-| Running sequentially | Use parallel sub-agents for independence |
+| Skipping synthesis | The synthesis IS the value — never skip |
