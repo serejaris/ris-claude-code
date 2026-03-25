@@ -29,6 +29,14 @@ Reusable skill templates for Claude Code. Currently includes:
 - [**project-release**](./skills/project-release/) — consistent release workflow with versioning, changelog, and GitHub releases
 - [**readme-generator**](./skills/readme-generator/) — create human-focused README files with proper structure
 
+#### Personal Corp Framework
+
+A system for running a business as one person with AI agents. GitHub becomes your operating system — projects, issues, and labels replace a team of managers. Skills replace processes that live in someone's head.
+
+- [**project-init**](./skills/project-init/) — guided interview → GitHub Project + labels + CLAUDE.md config. Run once to set up your command center
+- [**weekly-planning**](./skills/weekly-planning/) — turn retro findings + backlog into prioritized outcomes with Eisenhower matrix and delegation
+- [**weekly-retro**](./skills/weekly-retro/) — structured retrospective: gather data from all repos, interview founder, capture findings into issues and canonical files
+
 ### [Hooks](./hooks/)
 *Coming soon* — Pre/post command hooks for automation.
 

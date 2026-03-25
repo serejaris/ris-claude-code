@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.12.0] - 2026-03-25
+
+### Added
+- **Personal Corp Framework** — a system for running a business as one person with AI agents
+  - **project-init** skill — guided interview → GitHub Project + labels + CLAUDE.md config
+  - **weekly-planning** skill — retro findings + backlog → prioritized outcomes with Eisenhower matrix
+  - **weekly-retro** skill — structured retrospective: data gathering, founder interview, issue creation
+
 ## [1.11.0] - 2026-02-23
 
 ### Added

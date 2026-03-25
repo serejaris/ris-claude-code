@@ -29,6 +29,14 @@
 - [**project-release**](./skills/project-release/) — консистентный workflow релизов с версионированием, changelog и GitHub releases
 - [**readme-generator**](./skills/readme-generator/) — создаёт человеко-ориентированные README с правильной структурой
 
+#### Personal Corp Framework
+
+Система для управления бизнесом одного человека через AI-агентов. GitHub становится операционной системой — проекты, issues и labels заменяют команду менеджеров. Скиллы заменяют процессы, которые живут у кого-то в голове.
+
+- [**project-init**](./skills/project-init/) — интервью → GitHub Project + labels + конфиг в CLAUDE.md. Запускается один раз для настройки командного центра
+- [**weekly-planning**](./skills/weekly-planning/) — превращает ретро + бэклог в приоритизированные outcomes с матрицей Эйзенхауэра и делегированием
+- [**weekly-retro**](./skills/weekly-retro/) — структурированное ретро: сбор данных из всех репо, интервью с основателем, фиксация в issues и canonical files
+
 ### [Hooks](./hooks/)
 *Скоро* — Pre/post хуки для автоматизации команд.
 
