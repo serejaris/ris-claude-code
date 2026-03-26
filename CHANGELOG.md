@@ -17,6 +17,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Respects W-label lifecycle (never creates, only uses existing)
   - Part of Personal Corp framework: project-init → task-routing → weekly-planning/retro
 
+### Removed
+- **macos-fixer** — low value, not reusable
+- **api-digest** — incomplete, references non-existent files
+- **git-workflow-manager** — duplicates global CLAUDE.md rules
+- **project-release** — hardcoded to this repo, release rules moved to global config
+- **agent-teams** — superseded by built-in Claude Code agent capabilities
+- **opencode-config** — too niche (OpenCode CLI only)
+- **gemini-tmux-orchestration** — too niche, mixed language
+
 ## [1.12.0] - 2026-03-25
 
 ### Added
