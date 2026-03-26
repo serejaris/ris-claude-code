@@ -62,7 +62,37 @@ Most scripts require:
 
 ## Installation
 
-Each folder contains its own README with specific installation instructions.
+### Claude Code (plugin)
+
+```bash
+# Add marketplace
+claude plugins marketplace add serejaris/ris-claude-code
+
+# Install all skills
+claude plugins install ris-claude-code@ris-claude-code
+```
+
+### Claude Code (manual)
+
+```bash
+# Copy individual skills
+cp -r skills/project-init ~/.claude/skills/
+cp -r skills/task-routing ~/.claude/skills/
+cp -r skills/weekly-planning ~/.claude/skills/
+cp -r skills/weekly-retro ~/.claude/skills/
+```
+
+### Codex (OpenAI)
+
+```bash
+# Copy skills to Codex instructions directory
+cp -r skills/project-init ~/.codex/skills/
+cp -r skills/task-routing ~/.codex/skills/
+cp -r skills/weekly-planning ~/.codex/skills/
+cp -r skills/weekly-retro ~/.codex/skills/
+```
+
+Skills are plain markdown — they work with any AI coding agent that reads `.md` instructions.
 
 ## Author
 

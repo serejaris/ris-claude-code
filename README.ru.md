@@ -62,7 +62,37 @@ graph LR
 
 ## Установка
 
-Каждая папка содержит свой README с инструкциями по установке.
+### Claude Code (плагин)
+
+```bash
+# Добавить маркетплейс
+claude plugins marketplace add serejaris/ris-claude-code
+
+# Установить все скиллы
+claude plugins install ris-claude-code@ris-claude-code
+```
+
+### Claude Code (вручную)
+
+```bash
+# Скопировать нужные скиллы
+cp -r skills/project-init ~/.claude/skills/
+cp -r skills/task-routing ~/.claude/skills/
+cp -r skills/weekly-planning ~/.claude/skills/
+cp -r skills/weekly-retro ~/.claude/skills/
+```
+
+### Codex (OpenAI)
+
+```bash
+# Скопировать скиллы в директорию Codex
+cp -r skills/project-init ~/.codex/skills/
+cp -r skills/task-routing ~/.codex/skills/
+cp -r skills/weekly-planning ~/.codex/skills/
+cp -r skills/weekly-retro ~/.codex/skills/
+```
+
+Скиллы — это обычный markdown. Работают с любым AI-агентом, который читает `.md` инструкции.
 
 ## Автор
 
