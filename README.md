@@ -52,47 +52,25 @@ graph LR
 ### [Workflows](./workflows/)
 *Coming soon* — Multi-step automation patterns.
 
-## Requirements
-
-Most scripts require:
-- macOS or Linux
-- `jq` — JSON processor
-- `bc` — Calculator
-- `bun` — JavaScript runtime (for ccusage)
-
 ## Installation
 
-### Claude Code (plugin)
+### Claude Code Desktop
 
-```bash
-# Add marketplace
-claude plugins marketplace add serejaris/ris-claude-code
+**+** button → **Plugins** → **Add plugin** → search `ris-claude-code` → **Install**
 
-# Install all skills
-claude plugins install ris-claude-code@ris-claude-code
+### Claude Code CLI
+
+Type `/plugin` in chat → **Marketplaces** tab → **Add** → `serejaris/ris-claude-code` → **Discover** tab → **Install**
+
+### Codex
+
+```
+$skill-installer install https://github.com/serejaris/ris-claude-code/tree/main/skills/project-init
 ```
 
-### Claude Code (manual)
+### Any AI agent
 
-```bash
-# Copy individual skills
-cp -r skills/project-init ~/.claude/skills/
-cp -r skills/task-routing ~/.claude/skills/
-cp -r skills/weekly-planning ~/.claude/skills/
-cp -r skills/weekly-retro ~/.claude/skills/
-```
-
-### Codex (OpenAI)
-
-```bash
-# Copy skills to Codex instructions directory
-cp -r skills/project-init ~/.codex/skills/
-cp -r skills/task-routing ~/.codex/skills/
-cp -r skills/weekly-planning ~/.codex/skills/
-cp -r skills/weekly-retro ~/.codex/skills/
-```
-
-Skills are plain markdown — they work with any AI coding agent that reads `.md` instructions.
+Skills are plain markdown files. Copy any `skills/*/SKILL.md` into your agent's instructions directory.
 
 ## Author
 

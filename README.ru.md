@@ -62,37 +62,23 @@ graph LR
 
 ## Установка
 
-### Claude Code (плагин)
+### Claude Code Desktop
 
-```bash
-# Добавить маркетплейс
-claude plugins marketplace add serejaris/ris-claude-code
+Кнопка **+** → **Plugins** → **Add plugin** → найти `ris-claude-code` → **Install**
 
-# Установить все скиллы
-claude plugins install ris-claude-code@ris-claude-code
+### Claude Code CLI
+
+Напишите `/plugin` в чате → вкладка **Marketplaces** → **Add** → `serejaris/ris-claude-code` → вкладка **Discover** → **Install**
+
+### Codex
+
+```
+$skill-installer install https://github.com/serejaris/ris-claude-code/tree/main/skills/project-init
 ```
 
-### Claude Code (вручную)
+### Любой AI-агент
 
-```bash
-# Скопировать нужные скиллы
-cp -r skills/project-init ~/.claude/skills/
-cp -r skills/task-routing ~/.claude/skills/
-cp -r skills/weekly-planning ~/.claude/skills/
-cp -r skills/weekly-retro ~/.claude/skills/
-```
-
-### Codex (OpenAI)
-
-```bash
-# Скопировать скиллы в директорию Codex
-cp -r skills/project-init ~/.codex/skills/
-cp -r skills/task-routing ~/.codex/skills/
-cp -r skills/weekly-planning ~/.codex/skills/
-cp -r skills/weekly-retro ~/.codex/skills/
-```
-
-Скиллы — это обычный markdown. Работают с любым AI-агентом, который читает `.md` инструкции.
+Скиллы — обычные markdown-файлы. Скопируйте любой `skills/*/SKILL.md` в директорию инструкций вашего агента.
 
 ## Автор
 
