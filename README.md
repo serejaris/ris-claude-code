@@ -16,24 +16,30 @@ Custom statusline showing costs, context usage, and git branch with color-coded 
 
 ### [Skills](./skills/)
 Reusable skill templates for Claude Code. Currently includes:
-- [**agent-teams**](./skills/agent-teams/) — orchestrate multiple autonomous agents with shared task lists and direct messaging
-- [**api-digest**](./skills/api-digest/) — fetch raw API data and generate detailed digests without backend LLM costs
 - [**cc-analytics**](./skills/cc-analytics/) — generate HTML reports of Claude Code usage statistics
 - [**ceo-council**](./skills/ceo-council/) — launch parallel sub-agents as independent C-level experts for strategic project analysis
 - [**claude-md-writer**](./skills/claude-md-writer/) — create and refactor CLAUDE.md files following Anthropic best practices
-- [**gemini-tmux-orchestration**](./skills/gemini-tmux-orchestration/) — delegate tasks to Gemini CLI agent via tmux for parallel AI execution
 - [**gh-issues**](./skills/gh-issues/) — manage GitHub Issues via CLI with AI session context storage
-- [**git-workflow-manager**](./skills/git-workflow-manager/) — enforce conventional commits, semantic versioning, and consistent release notes
-- [**macos-fixer**](./skills/macos-fixer/) — diagnose macOS memory issues and suggest fixes
-- [**opencode-config**](./skills/opencode-config/) — configure OpenCode CLI with custom providers and models
-- [**project-release**](./skills/project-release/) — consistent release workflow with versioning, changelog, and GitHub releases
 - [**readme-generator**](./skills/readme-generator/) — create human-focused README files with proper structure
 
 #### Personal Corp Framework
 
 A system for running a business as one person with AI agents. GitHub becomes your operating system — projects, issues, and labels replace a team of managers. Skills replace processes that live in someone's head.
 
+```mermaid
+graph LR
+    A[project-init] -->|creates config| B[task-routing]
+    B -->|creates issues| C[weekly-planning]
+    C -->|prioritizes| D[weekly-retro]
+    D -->|feeds back| C
+    style A fill:#10b981,color:#fff
+    style B fill:#8b5cf6,color:#fff
+    style C fill:#3b82f6,color:#fff
+    style D fill:#f59e0b,color:#fff
+```
+
 - [**project-init**](./skills/project-init/) — guided interview → GitHub Project + labels + CLAUDE.md config. Run once to set up your command center
+- [**task-routing**](./skills/task-routing/) — route issues to the correct repo using CLAUDE.md routing config before creating
 - [**weekly-planning**](./skills/weekly-planning/) — turn retro findings + backlog into prioritized outcomes with Eisenhower matrix and delegation
 - [**weekly-retro**](./skills/weekly-retro/) — structured retrospective: gather data from all repos, interview founder, capture findings into issues and canonical files
 

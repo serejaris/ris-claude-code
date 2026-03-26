@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.13.0] - 2026-03-26
+
+### Added
+- **task-routing** skill — route issues to the correct repo via CLAUDE.md routing config
+  - Reads routing patterns created by `project-init`
+  - Matches task keywords to target repo
+  - Checks duplicates across repos and unified project
+  - Respects W-label lifecycle (never creates, only uses existing)
+  - Part of Personal Corp framework: project-init → task-routing → weekly-planning/retro
+
 ## [1.12.0] - 2026-03-25
 
 ### Added
