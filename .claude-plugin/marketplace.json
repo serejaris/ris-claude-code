@@ -1,0 +1,23 @@
+{
+  "name": "ris-claude-code",
+  "owner": {
+    "name": "Sereja Ris",
+    "email": "ris@sereja.tech"
+  },
+  "metadata": {
+    "description": "Personal Corp framework and productivity skills for Claude Code",
+    "version": "1.13.0"
+  },
+  "plugins": [
+    {
+      "name": "ris-claude-code",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/serejaris/ris-claude-code.git"
+      },
+      "description": "Personal Corp framework: run your business with AI agents through GitHub. Includes project-init, task-routing, weekly-planning, weekly-retro, and 5 utility skills.",
+      "version": "1.13.0",
+      "strict": true
+    }
+  ]
+}
