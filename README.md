@@ -20,6 +20,7 @@ Reusable skill templates for Claude Code. Currently includes:
 - [**ceo-council**](./skills/ceo-council/) — launch parallel sub-agents as independent C-level experts for strategic project analysis
 - [**claude-md-writer**](./skills/claude-md-writer/) — create and refactor CLAUDE.md files following Anthropic best practices
 - [**gh-issues**](./skills/gh-issues/) — manage GitHub Issues via CLI with AI session context storage
+- [**paperclip-api**](./skills/paperclip-api/) — manage Paperclip AI agent companies via CLI and REST API
 - [**readme-generator**](./skills/readme-generator/) — create human-focused README files with proper structure
 
 #### Personal Corp Framework

@@ -20,6 +20,7 @@
 - [**ceo-council**](./skills/ceo-council/) — запуск параллельных субагентов в роли независимых C-level экспертов для стратегического анализа
 - [**claude-md-writer**](./skills/claude-md-writer/) — создаёт и рефакторит CLAUDE.md по best practices Anthropic
 - [**gh-issues**](./skills/gh-issues/) — управление GitHub Issues через CLI с хранением AI-контекста сессий
+- [**paperclip-api**](./skills/paperclip-api/) — управление компаниями AI-агентов Paperclip через CLI и REST API
 - [**readme-generator**](./skills/readme-generator/) — создаёт человеко-ориентированные README с правильной структурой
 
 #### Personal Corp Framework

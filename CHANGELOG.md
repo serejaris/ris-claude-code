@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.14.0] - 2026-03-27
+
+### Added
+- **paperclip-api** skill — manage Paperclip AI agent companies via CLI and REST API
+  - Full CLI reference: issues, agents, approvals, companies, context profiles
+  - REST API endpoints with curl examples for all operations
+  - Agent instruction files: direct markdown editing in `~/.paperclip/`
+  - Recipes: create & assign tasks, switch agent language, bulk-approve hires
+  - Links to official docs (docs.paperclip.ing)
+
 ## [1.13.0] - 2026-03-26
 
 ### Added
