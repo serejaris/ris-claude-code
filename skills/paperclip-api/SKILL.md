@@ -108,8 +108,8 @@ PATCH /api/agents/{agentId}
 POST /api/agents/{agentId}/pause
 POST /api/agents/{agentId}/resume
 
-# Запустить heartbeat
-POST /api/agents/{agentId}/heartbeat
+# Запустить heartbeat — ТОЛЬКО через CLI, не через REST API!
+# npx paperclipai heartbeat run --agent-id {agentId} --api-base http://127.0.0.1:3101
 ```
 
 ### Одобрения (Approvals)
@@ -214,6 +214,47 @@ curl -s $PAPERCLIP_API/api/companies/$CID/approvals?status=pending | \
   xargs -I{} curl -X POST $PAPERCLIP_API/api/approvals/{}/approve \
     -H "Content-Type: application/json" -d '{"notes": "Одобрено"}'
 ```
+
+### Запустить heartbeat агента
+
+**Heartbeat запускается ТОЛЬКО через CLI, не через REST API.**
+
+```bash
+npx paperclipai heartbeat run \
+  --agent-id {agentId} \
+  --api-base http://127.0.0.1:3101
+```
+
+Опции:
+- `--source` — `timer | assignment | on_demand | automation` (default: `on_demand`)
+- `--trigger` — `manual | ping | callback | system` (default: `manual`)
+- `--timeout-ms` — таймаут в мс (default: 0 = без лимита)
+- `--debug` — показать сырой stdout адаптера
+
+### Настроить git workflow для агента-инженера
+
+Добавить в AGENTS.md инженера (в файле инструкций):
+
+```markdown
+## Git workflow
+
+НИКОГДА не коммить в main напрямую. Для каждой задачи:
+1. Создай ветку: `git checkout -b feat/<issue-id>-<slug>`
+2. Работай в ветке, коммить атомарно
+3. После завершения создай Pull Request: `gh pr create --title "..." --body "..."`
+4. Оставь комментарий к задаче со ссылкой на PR
+5. Дождись одобрения перед мержем — сам не мержи
+```
+
+### Цепочка: Цель → Стратегия → Задачи
+
+Встроенный workflow Paperclip:
+
+1. **Цель** — задаётся в Goals (ты)
+2. **CEO heartbeat** — CEO видит цель, пишет стратегию, отправляет на одобрение (`approve_ceo_strategy`)
+3. **Одобрение** — ты читаешь и одобряешь/отклоняешь
+4. **Декомпозиция** — CEO разбивает стратегию на задачи, назначает агентам
+5. **Найм** — CEO нанимает новых агентов через `hire_agent` approval
 
 ## Чего пока нет
 
