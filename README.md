@@ -9,23 +9,21 @@ By [Ris](https://t.me/ris_ai) — AI development & vibecoding
 
 A collection of customizations, scripts, and workflows for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-## Contents
+## Skills
 
-### [Statusline](./statusline/)
-Custom statusline showing costs, context usage, and git branch with color-coded indicators.
-
-### [Skills](./skills/)
-Reusable skill templates for Claude Code. Currently includes:
-- [**cc-analytics**](./skills/cc-analytics/) — generate HTML reports of Claude Code usage statistics
-- [**ceo-council**](./skills/ceo-council/) — launch parallel sub-agents as independent C-level experts for strategic project analysis
-- [**claude-md-writer**](./skills/claude-md-writer/) — create and refactor CLAUDE.md files following Anthropic best practices
-- [**gh-issues**](./skills/gh-issues/) — manage GitHub Issues via CLI with AI session context storage
-- [**paperclip-api**](./skills/paperclip-api/) — manage Paperclip AI agent companies via CLI and REST API
-- [**readme-generator**](./skills/readme-generator/) — create human-focused README files with proper structure
+| Skill | What it does |
+|-------|-------------|
+| [product-data-audit](./skills/product-data-audit/) | Deep product/business audit → interactive HTML report with 12 sections |
+| [cc-analytics](./skills/cc-analytics/) | HTML reports of Claude Code usage statistics |
+| [ceo-council](./skills/ceo-council/) | Parallel sub-agents as C-level experts for strategic analysis |
+| [claude-md-writer](./skills/claude-md-writer/) | Create and refactor CLAUDE.md files following best practices |
+| [gh-issues](./skills/gh-issues/) | Manage GitHub Issues via CLI with session context |
+| [paperclip-api](./skills/paperclip-api/) | Manage Paperclip AI agent companies via CLI and REST API |
+| [readme-generator](./skills/readme-generator/) | Human-focused README files with proper structure |
 
 #### Personal Corp Framework
 
-A system for running a business as one person with AI agents. GitHub becomes your operating system — projects, issues, and labels replace a team of managers. Skills replace processes that live in someone's head.
+A system for running a business as one person with AI agents. GitHub becomes your operating system.
 
 ```mermaid
 graph LR
@@ -39,39 +37,37 @@ graph LR
     style D fill:#f59e0b,color:#fff
 ```
 
-- [**project-init**](./skills/project-init/) — guided interview → GitHub Project + labels + CLAUDE.md config. Run once to set up your command center
-- [**task-routing**](./skills/task-routing/) — route issues to the correct repo using CLAUDE.md routing config before creating
-- [**weekly-planning**](./skills/weekly-planning/) — turn retro findings + backlog into prioritized outcomes with Eisenhower matrix and delegation
-- [**weekly-retro**](./skills/weekly-retro/) — structured retrospective: gather data from all repos, interview founder, capture findings into issues and canonical files
+| Skill | What it does |
+|-------|-------------|
+| [project-init](./skills/project-init/) | Guided interview → GitHub Project + labels + CLAUDE.md config |
+| [task-routing](./skills/task-routing/) | Route issues to the correct repo using routing config |
+| [weekly-planning](./skills/weekly-planning/) | Retro findings + backlog → prioritized outcomes with Eisenhower matrix |
+| [weekly-retro](./skills/weekly-retro/) | Structured retrospective: gather data, interview founder, capture findings |
 
-### [Hooks](./hooks/)
-*Coming soon* — Pre/post command hooks for automation.
+## Other
 
-### [Prompts](./prompts/)
-*Coming soon* — Custom prompts and CLAUDE.md examples.
-
-### [Workflows](./workflows/)
-*Coming soon* — Multi-step automation patterns.
+### [Statusline](./statusline/)
+Custom statusline showing costs, context usage, and git branch with color-coded indicators.
 
 ## Installation
 
-### Claude Code Desktop
+### Install a single skill
 
-**+** button → **Plugins** → **Add plugin** → search `ris-claude-code` → **Install**
+Tell your agent:
 
-### Claude Code CLI
+> Install this skill: `https://github.com/serejaris/ris-claude-code/tree/main/skills/cc-analytics`
 
-Type `/plugin` in chat → **Marketplaces** tab → **Add** → `serejaris/ris-claude-code` → **Discover** tab → **Install**
+Replace `cc-analytics` with any skill name from the table above.
 
-### Codex
+### Install all skills (plugin)
 
-```
-$skill-installer install https://github.com/serejaris/ris-claude-code/tree/main/skills/project-init
-```
+**Claude Code Desktop:** **+** → **Plugins** → search `ris-claude-code` → **Install**
 
-### Any AI agent
+**Claude Code CLI:** `/plugin` → **Marketplaces** → **Add** → `serejaris/ris-claude-code` → **Discover** → **Install**
 
-Skills are plain markdown files. Copy any `skills/*/SKILL.md` into your agent's instructions directory.
+### Manual
+
+Skills are plain markdown files. Copy `skills/<name>/SKILL.md` into `~/.claude/skills/<name>/`.
 
 ## Author
 
