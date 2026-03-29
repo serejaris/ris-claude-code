@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.15.0] - 2026-03-29
+
+### Added
+- **product-data-audit** skill — deep product/business audit with interactive HTML visualization
+  - 12-section report: ecosystem diagram, decision map, data systems, bottlenecks, implementation contours
+  - 18-artifact checklist (OKR, CLAUDE.md, metric definitions, decision log, escalation rules)
+  - Structured facts: claim + metric pills + source reference
+  - 35+ English-to-Russian terminology mappings
+  - Swiss Precision HTML theme (Cormorant Garamond + IBM Plex Mono)
+  - Tested with 6 subagents, 2 REFACTOR rounds
+
+### Changed
+- README restructured: skills as tables, removed Coming Soon sections, simplified installation
+
 ## [1.14.0] - 2026-03-27
 
 ### Added
