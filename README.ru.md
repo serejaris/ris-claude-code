@@ -5,27 +5,25 @@
 
 > Tips, scripts and workflows for Claude Code
 
-От [Ris](https://t.me/ris_ai) — веду канал про вайбкодинг
+От [Ris](https://t.me/ris_ai) — пишу про AI-разработку и вайбкодинг
 
 Коллекция кастомизаций, скриптов и воркфлоу для [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-## Содержание
+## Skills
 
-### [Statusline](./statusline/)
-Кастомный статусбар с отображением затрат, использования контекста и git-ветки с цветовой индикацией.
-
-### [Skills](./skills/)
-Переиспользуемые шаблоны скиллов для Claude Code:
-- [**cc-analytics**](./skills/cc-analytics/) — генерирует HTML-отчёты статистики использования Claude Code
-- [**ceo-council**](./skills/ceo-council/) — запуск параллельных субагентов в роли независимых C-level экспертов для стратегического анализа
-- [**claude-md-writer**](./skills/claude-md-writer/) — создаёт и рефакторит CLAUDE.md по best practices Anthropic
-- [**gh-issues**](./skills/gh-issues/) — управление GitHub Issues через CLI с хранением AI-контекста сессий
-- [**paperclip-api**](./skills/paperclip-api/) — управление компаниями AI-агентов Paperclip через CLI и REST API
-- [**readme-generator**](./skills/readme-generator/) — создаёт человеко-ориентированные README с правильной структурой
+| Скилл | Что делает |
+|-------|-----------|
+| [product-data-audit](./skills/product-data-audit/) | Глубокий аудит продукта/бизнеса — интерактивный HTML-отчёт на 12 секций |
+| [cc-analytics](./skills/cc-analytics/) | HTML-отчёты статистики использования Claude Code |
+| [ceo-council](./skills/ceo-council/) | Параллельные субагенты в роли C-level экспертов для стратегического анализа |
+| [claude-md-writer](./skills/claude-md-writer/) | Создание и рефакторинг CLAUDE.md по best practices |
+| [gh-issues](./skills/gh-issues/) | Управление GitHub Issues через CLI с хранением контекста сессий |
+| [paperclip-api](./skills/paperclip-api/) | Управление компаниями AI-агентов Paperclip через CLI и REST API |
+| [readme-generator](./skills/readme-generator/) | Человеко-ориентированные README с правильной структурой |
 
 #### Personal Corp Framework
 
-Система для управления бизнесом одного человека через AI-агентов. GitHub становится операционной системой — проекты, issues и labels заменяют команду менеджеров. Скиллы заменяют процессы, которые живут у кого-то в голове.
+Система для управления бизнесом одного человека через AI-агентов. GitHub становится операционной системой.
 
 ```mermaid
 graph LR
@@ -39,51 +37,41 @@ graph LR
     style D fill:#f59e0b,color:#fff
 ```
 
-- [**project-init**](./skills/project-init/) — интервью → GitHub Project + labels + конфиг в CLAUDE.md. Запускается один раз для настройки командного центра
-- [**task-routing**](./skills/task-routing/) — маршрутизация issues в правильный репо через конфиг CLAUDE.md перед созданием
-- [**weekly-planning**](./skills/weekly-planning/) — превращает ретро + бэклог в приоритизированные outcomes с матрицей Эйзенхауэра и делегированием
-- [**weekly-retro**](./skills/weekly-retro/) — структурированное ретро: сбор данных из всех репо, интервью с основателем, фиксация в issues и canonical files
+| Скилл | Что делает |
+|-------|-----------|
+| [project-init](./skills/project-init/) | Интервью — GitHub Project + labels + конфиг в CLAUDE.md |
+| [task-routing](./skills/task-routing/) | Маршрутизация issues в правильный репо через конфиг |
+| [weekly-planning](./skills/weekly-planning/) | Ретро + бэклог — приоритизированные outcomes с матрицей Эйзенхауэра |
+| [weekly-retro](./skills/weekly-retro/) | Структурированное ретро: сбор данных, интервью с основателем, фиксация в issues |
 
-### [Hooks](./hooks/)
-*Скоро* — Pre/post хуки для автоматизации команд.
+## Other
 
-### [Prompts](./prompts/)
-*Скоро* — Кастомные промпты и примеры CLAUDE.md.
-
-### [Workflows](./workflows/)
-*Скоро* — Паттерны многошаговой автоматизации.
-
-## Требования
-
-Большинство скриптов требуют:
-- macOS или Linux
-- `jq` — обработка JSON
-- `bc` — калькулятор
-- `bun` — JavaScript runtime (для ccusage)
+### [Statusline](./statusline/)
+Кастомный статусбар с отображением затрат, использования контекста и git-ветки с цветовой индикацией.
 
 ## Установка
 
-### Claude Code Desktop
+### Установить один скилл
 
-Кнопка **+** → **Plugins** → **Add plugin** → найти `ris-claude-code` → **Install**
+Скажите агенту:
 
-### Claude Code CLI
+> Install this skill: `https://github.com/serejaris/ris-claude-code/tree/main/skills/cc-analytics`
 
-Напишите `/plugin` в чате → вкладка **Marketplaces** → **Add** → `serejaris/ris-claude-code` → вкладка **Discover** → **Install**
+Замените `cc-analytics` на имя любого скилла из таблицы выше.
 
-### Codex
+### Установить все скиллы (плагин)
 
-```
-$skill-installer install https://github.com/serejaris/ris-claude-code/tree/main/skills/project-init
-```
+**Claude Code Desktop:** **+** → **Plugins** → найти `ris-claude-code` → **Install**
 
-### Любой AI-агент
+**Claude Code CLI:** `/plugin` → **Marketplaces** → **Add** → `serejaris/ris-claude-code` → **Discover** → **Install**
 
-Скиллы — обычные markdown-файлы. Скопируйте любой `skills/*/SKILL.md` в директорию инструкций вашего агента.
+### Вручную
+
+Скиллы — обычные markdown-файлы. Скопируйте `skills/<name>/SKILL.md` в `~/.claude/skills/<name>/`.
 
 ## Автор
 
-- Telegram: [@ris_ai](https://t.me/ris_ai) — пишу про AI-разработку и вайбкодинг
+- Telegram: [@ris_ai](https://t.me/ris_ai) — AI-разработка и вайбкодинг
 - YouTube: [@serejaris](https://www.youtube.com/@serejaris)
 - [vibecoding.phd](https://vibecoding.phd)
 

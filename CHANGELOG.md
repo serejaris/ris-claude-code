@@ -189,7 +189,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.11.0...HEAD
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.15.0...HEAD
+[1.15.0]: https://github.com/serejaris/ris-claude-code/compare/v1.14.0...v1.15.0
+[1.14.0]: https://github.com/serejaris/ris-claude-code/compare/v1.13.0...v1.14.0
+[1.13.0]: https://github.com/serejaris/ris-claude-code/compare/v1.12.0...v1.13.0
+[1.12.0]: https://github.com/serejaris/ris-claude-code/compare/v1.11.0...v1.12.0
 [1.11.0]: https://github.com/serejaris/ris-claude-code/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/serejaris/ris-claude-code/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/serejaris/ris-claude-code/compare/v1.8.0...v1.9.0

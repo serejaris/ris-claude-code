@@ -10,6 +10,13 @@ Collection of Claude Code customizations: skills, statusline, hooks.
 - Adding/removing any component → update corresponding section in both READMEs
 - Release without README updates = incomplete release
 
+## Never
+
+- Never delete skills directories without explicit confirmation
+- Never push to main without running through release checklist
+- Never modify SKILL.md frontmatter (name, description) without updating both READMEs
+- Never create GitHub issues/labels in this public repo with private data
+
 ## Structure
 
 | Path | Purpose |
