@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.15.1] - 2026-03-29
+
+### Fixed
+- CHANGELOG compare links for v1.12–v1.15 and Unreleased pointer
+- README.ru.md synced with English structure (tables, removed Coming Soon sections)
+- Added missing paperclip-api/README.ru.md
+
+### Removed
+- Empty placeholder directories: hooks/, prompts/, workflows/
+
+### Added
+- "Never" safety section in CLAUDE.md
+
 ## [1.15.0] - 2026-03-29
 
 ### Added
@@ -189,7 +202,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.15.0...HEAD
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...HEAD
+[1.15.1]: https://github.com/serejaris/ris-claude-code/compare/v1.15.0...v1.15.1
 [1.15.0]: https://github.com/serejaris/ris-claude-code/compare/v1.14.0...v1.15.0
 [1.14.0]: https://github.com/serejaris/ris-claude-code/compare/v1.13.0...v1.14.0
 [1.13.0]: https://github.com/serejaris/ris-claude-code/compare/v1.12.0...v1.13.0
