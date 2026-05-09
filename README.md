@@ -7,6 +7,8 @@
 
 By [Ris](https://t.me/ris_ai) — AI development & vibecoding
 
+Русская версия: [README.ru.md](README.ru.md). Коротко: это публичный набор Claude Code skills, hooks, statusline и рабочих приёмов для агентной разработки.
+
 A collection of customizations, scripts, and workflows for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
 ## Skills
