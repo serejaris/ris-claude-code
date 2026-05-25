@@ -15,6 +15,22 @@ Turn retro findings + existing backlog into a prioritized week with clear outcom
 - Monday/Tuesday when planning the week
 - When user says "план на неделю", "приоритизация", "что делаем"
 
+## Iron Rule: Planning Is Not Execution
+
+Weekly planning creates a plan. It does not execute the plan.
+
+Allowed during planning:
+- Gather context needed to choose outcomes
+- Read calendars, issues, project boards, CRM/backlog files, and recent notes
+- Draft outcomes, issue proposals, and board updates
+
+Not allowed during planning:
+- Start implementation work for a chosen outcome
+- Create deliverables, briefs, proposals, content, code, or production changes
+- Spawn executor agents for work that belongs to the coming week
+
+If the user asks to "do this now" while planning, finish or pause planning first, then handle that as a separate execution task.
+
 ## Process
 
 ```dot
@@ -45,12 +61,16 @@ Sources to scan:
 
 ### 2. Map calendar
 
-Ask user about the week. One question at a time:
-- Fixed events (lectures, mentoring, meetings)
+Read known sources before asking the user. Use calendar, existing issues, project boards, and planning files to establish:
+- Today's date
+- Planned week start/end
+- Fixed events
 - Known deadlines
-- New commitments from last week
+- Available capacity
 
-IMPORTANT: Verify dates. Ask "what day is today?" if unclear.
+Ask only for facts that are not recoverable from sources, one question at a time.
+
+IMPORTANT: Verify dates before writing outcomes. Do not create deadlines in the past. If the deadline is today, include a time boundary such as "by EOD".
 
 ### 3. Group by surface
 
@@ -86,6 +106,8 @@ Rules:
 - Each outcome has a measurable check
 - Include both founder-only and agent-delegated work
 - Include B2B/sales if there are active deals — these are outcomes, not bonuses
+- Outcomes are commitments chosen with the user, not a silent reconstruction from the backlog
+- Use the backlog as input, then ask the user to choose or edit outcome options
 
 Example:
 ```
@@ -135,6 +157,9 @@ gh search issues --owner $YOUR_OWNER --label "W{NN}" --state open
 - Planning 40h of productive work → budget 60% capacity
 - Skipping calendar mapping → leads to conflicts
 - Mixing "task" with "outcome" → outcome = result by Friday
+- Doing execution work inside planning → finish planning first, execute separately
+- Asking the user for facts that are already available in sources → read sources first
+- Writing deadlines without checking the actual date → verify current date and week range
 
 ## Common Mistakes
 
@@ -147,6 +172,8 @@ gh search issues --owner $YOUR_OWNER --label "W{NN}" --state open
 | Publishing paid content publicly | Paid content stays in paid repos |
 | Assuming data without checking | Verify with `gh issue list` + actual files |
 | Fixed 3 outcomes limit | As many outcomes as realistic |
+| Executing tasks during planning | Capture as outcomes/issues, execute after planning |
+| Asking instead of reading | Check source systems first, ask only for missing facts |
 
 ## Integration with weekly-retro
 
