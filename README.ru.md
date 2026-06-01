@@ -17,6 +17,7 @@
 | [cc-analytics](./skills/cc-analytics/) | HTML-отчёты статистики использования Claude Code |
 | [ceo-council](./skills/ceo-council/) | Параллельные субагенты в роли C-level экспертов для стратегического анализа |
 | [claude-md-writer](./skills/claude-md-writer/) | Создание и рефакторинг CLAUDE.md по best practices |
+| [design-minimal](./skills/design-minimal/) | Одна HTML-страница в минимальном стиле для дашбордов, брифов, раздаток и отчётов |
 | [gh-issues](./skills/gh-issues/) | Управление GitHub Issues через CLI с хранением контекста сессий |
 | [meeting-copilot](./skills/meeting-copilot/) | Live dashboard для встреч: подготовка, обновление из транскрипта, закрытие с решениями и follow-up |
 | [paperclip-api](./skills/paperclip-api/) | Управление компаниями AI-агентов Paperclip через CLI и REST API |

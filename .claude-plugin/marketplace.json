@@ -9,7 +9,7 @@
       "name": "ris-claude-code",
       "source": "./",
       "description": "Personal Corp framework: run your business with AI agents through GitHub. Includes planning, retro, GitHub ops, meeting copilot, and utility skills.",
-      "version": "1.16.0",
+      "version": "1.17.0",
       "author": {
         "name": "Sereja Ris"
       },

@@ -19,6 +19,7 @@ A collection of customizations, scripts, and workflows for [Claude Code](https:/
 | [cc-analytics](./skills/cc-analytics/) | HTML reports of Claude Code usage statistics |
 | [ceo-council](./skills/ceo-council/) | Parallel sub-agents as C-level experts for strategic analysis |
 | [claude-md-writer](./skills/claude-md-writer/) | Create and refactor CLAUDE.md files following best practices |
+| [design-minimal](./skills/design-minimal/) | Standalone minimal HTML pages for dashboards, briefs, handouts, and reports |
 | [gh-issues](./skills/gh-issues/) | Manage GitHub Issues via CLI with session context |
 | [meeting-copilot](./skills/meeting-copilot/) | Live meeting dashboard: prepare, update from transcript chunks, close with decisions and follow-ups |
 | [paperclip-api](./skills/paperclip-api/) | Manage Paperclip AI agent companies via CLI and REST API |

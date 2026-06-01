@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.17.0] - 2026-06-01
+
+### Added
+- **design-minimal** skill — create one standalone minimal HTML page for dashboards, briefs, handouts, maps, and internal reports
+  - Tailwind CDN only, system fonts, fixed desktop-oriented layout
+  - No custom component CSS, responsive variants, gradients, shadows, rounded corners, icons, or external fonts
+  - Includes an explicit language rule: visible UI follows the user's language, technical identifiers stay copyable
+  - Bilingual docs (README.md + README.ru.md)
+
 ## [1.16.0] - 2026-05-22
 
 ### Added
@@ -216,8 +225,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.16.0...HEAD
-[1.16.0]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...v1.16.0
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.17.0...HEAD
+[1.17.0]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...v1.17.0
+[1.16.0]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...485a46c
 [1.15.1]: https://github.com/serejaris/ris-claude-code/compare/v1.15.0...v1.15.1
 [1.15.0]: https://github.com/serejaris/ris-claude-code/compare/v1.14.0...v1.15.0
 [1.14.0]: https://github.com/serejaris/ris-claude-code/compare/v1.13.0...v1.14.0
