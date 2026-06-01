@@ -23,6 +23,7 @@
 | [paperclip-api](./skills/paperclip-api/) | Управление компаниями AI-агентов Paperclip через CLI и REST API |
 | [readme-generator](./skills/readme-generator/) | Человеко-ориентированные README с правильной структурой |
 | [ris-draft](./skills/ris-draft/) | Одна HTML-диаграмма в стиле плоского инженерного чертежа — архитектура, потоки, spec sheets |
+| [tg-bot-ops](./skills/tg-bot-ops/) | Переиспользуемый операционный плейбук для Telegram-ботов и Telegram-to-agent gateways |
 
 ### Дизайн-скиллы
 
@@ -30,6 +31,12 @@
 |-------|--------------------|
 | [design-minimal](./skills/design-minimal/) | Читаемые standalone HTML-страницы: дашборды, брифы, раздатки, операционные карты, отчёты |
 | [ris-draft](./skills/ris-draft/) | Технические диаграммы в стиле плоского инженерного чертежа: архитектура, system flows, spec sheets |
+
+### Telegram
+
+| Скилл | Когда использовать |
+|-------|--------------------|
+| [tg-bot-ops](./skills/tg-bot-ops/) | Инциденты Telegram-ботов и Telegram-to-agent gateways, webhook/polling diagnostics, безопасный restart, Bot API smoke tests, delivery в forum topics |
 
 #### Personal Corp Framework
 
@@ -77,7 +84,12 @@ graph LR
 
 ### Вручную
 
-Скиллы — обычные markdown-файлы. Скопируйте `skills/<name>/SKILL.md` в `~/.claude/skills/<name>/`.
+Скиллы — обычные папки. Копируйте всю папку скилла, чтобы не потерять optional
+references и examples:
+
+```bash
+cp -r skills/<name> ~/.claude/skills/
+```
 
 ## Автор
 

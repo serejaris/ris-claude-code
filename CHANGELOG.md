@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.18.0] - 2026-06-01
+
+### Added
+- **tg-bot-ops** skill — public Telegram bot and Telegram-to-agent gateway operations playbook
+  - Diagnoses webhook vs polling setup, update delivery, privacy mode, and forum topic routing
+  - Includes a reusable Hermes-compatible gateway checklist with all infrastructure details placeholdered
+  - Adds safety gates for bot tokens, `.env`, raw logs, private DMs, and production restarts
+  - Includes bilingual docs (README.md + README.ru.md) and public-safe incident reporting format
+
 ## [1.17.0] - 2026-06-01
 
 ### Added
@@ -225,7 +234,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.17.0...HEAD
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.18.0...HEAD
+[1.18.0]: https://github.com/serejaris/ris-claude-code/compare/v1.17.0...v1.18.0
 [1.17.0]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...v1.17.0
 [1.16.0]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...485a46c
 [1.15.1]: https://github.com/serejaris/ris-claude-code/compare/v1.15.0...v1.15.1

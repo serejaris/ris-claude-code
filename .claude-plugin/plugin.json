@@ -1,7 +1,7 @@
 {
   "name": "ris-claude-code",
-  "description": "Personal Corp framework: run your business with AI agents through GitHub",
-  "version": "1.17.0",
+  "description": "Personal Corp framework: run your business with AI agents through GitHub, Telegram, and agent gateways",
+  "version": "1.18.0",
   "author": {
     "name": "Sereja Ris",
     "email": "ris@sereja.tech",
@@ -10,6 +10,6 @@
   "homepage": "https://github.com/serejaris/ris-claude-code",
   "repository": "https://github.com/serejaris/ris-claude-code",
   "license": "MIT",
-  "keywords": ["personal-corp", "founder", "ai-agents", "business-ops", "weekly-planning", "retro", "meeting-copilot"],
+  "keywords": ["personal-corp", "founder", "ai-agents", "business-ops", "weekly-planning", "retro", "meeting-copilot", "telegram", "telegram-bot", "bot-ops", "agent-gateway"],
   "category": "productivity"
 }

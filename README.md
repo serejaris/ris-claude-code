@@ -25,6 +25,7 @@ A collection of customizations, scripts, and workflows for [Claude Code](https:/
 | [paperclip-api](./skills/paperclip-api/) | Manage Paperclip AI agent companies via CLI and REST API |
 | [readme-generator](./skills/readme-generator/) | Human-focused README files with proper structure |
 | [ris-draft](./skills/ris-draft/) | One self-contained HTML diagram in flat engineering blueprint style — architecture, flows, spec sheets |
+| [tg-bot-ops](./skills/tg-bot-ops/) | Reusable operations playbook for Telegram bots and Telegram-to-agent gateways |
 
 ### Design Skills
 
@@ -32,6 +33,12 @@ A collection of customizations, scripts, and workflows for [Claude Code](https:/
 |-------|----------|
 | [design-minimal](./skills/design-minimal/) | Reading-first standalone HTML pages: dashboards, briefs, handouts, operating maps, reports |
 | [ris-draft](./skills/ris-draft/) | Technical diagrams in flat engineering blueprint style: architecture, system flows, spec sheets |
+
+### Telegram
+
+| Skill | Use When |
+|-------|----------|
+| [tg-bot-ops](./skills/tg-bot-ops/) | Telegram bot and Telegram-to-agent gateway incidents, webhook/polling diagnostics, safe restart plans, Bot API smoke tests, forum topic delivery |
 
 #### Personal Corp Framework
 
@@ -79,7 +86,12 @@ Replace `cc-analytics` with any skill name from the table above.
 
 ### Manual
 
-Skills are plain markdown files. Copy `skills/<name>/SKILL.md` into `~/.claude/skills/<name>/`.
+Skills are plain folders. Copy the whole skill directory so optional references
+and examples are preserved:
+
+```bash
+cp -r skills/<name> ~/.claude/skills/
+```
 
 ## Author
 
