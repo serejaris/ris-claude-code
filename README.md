@@ -26,6 +26,13 @@ A collection of customizations, scripts, and workflows for [Claude Code](https:/
 | [readme-generator](./skills/readme-generator/) | Human-focused README files with proper structure |
 | [ris-draft](./skills/ris-draft/) | One self-contained HTML diagram in flat engineering blueprint style — architecture, flows, spec sheets |
 
+### Design Skills
+
+| Skill | Use When |
+|-------|----------|
+| [design-minimal](./skills/design-minimal/) | Reading-first standalone HTML pages: dashboards, briefs, handouts, operating maps, reports |
+| [ris-draft](./skills/ris-draft/) | Technical diagrams in flat engineering blueprint style: architecture, system flows, spec sheets |
+
 #### Personal Corp Framework
 
 A system for running a business as one person with AI agents. GitHub becomes your operating system.
