@@ -1,0 +1,47 @@
+{
+  "name": "personal-corp-skills",
+  "version": "1.20.0",
+  "description": "Public Claude Code skills for Personal Corp, product work, AI operations, and agent-assisted development",
+  "author": {
+    "name": "Sereja Ris",
+    "email": "ris@sereja.tech",
+    "url": "https://sereja.tech"
+  },
+  "homepage": "https://github.com/serejaris/personal-corp-skills",
+  "repository": "https://github.com/serejaris/personal-corp-skills",
+  "license": "MIT",
+  "keywords": [
+    "personal-corp",
+    "claude-code",
+    "skills",
+    "ai-agents",
+    "agentic-workflows",
+    "product-ops",
+    "business-ops",
+    "telegram",
+    "media",
+    "art-direction"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Personal Corp Skills",
+    "shortDescription": "Public Claude Code skills for Personal Corp and AI operations.",
+    "longDescription": "A public collection of sanitized Claude Code skills for Personal Corp workflows, product audits, GitHub operations, Telegram bot operations, media/art-direction workflows, and agent-assisted development.",
+    "developerName": "Sereja Ris",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills",
+      "Documentation",
+      "Workflow Automation"
+    ],
+    "websiteURL": "https://github.com/serejaris/personal-corp-skills",
+    "privacyPolicyURL": "https://github.com/serejaris/personal-corp-skills/blob/main/SECURITY.md",
+    "termsOfServiceURL": "https://github.com/serejaris/personal-corp-skills/blob/main/LICENSE",
+    "brandColor": "#2563EB",
+    "defaultPrompt": [
+      "Use Personal Corp skills to plan my week.",
+      "Audit this product with product-data-audit.",
+      "Route this task with the right GitHub workflow."
+    ]
+  }
+}

@@ -1,13 +1,57 @@
-# Claude Code Tips & Tricks
+# Personal Corp Skills
 
 [![en](https://img.shields.io/badge/lang-en-blue.svg)](README.md)
 [![ru](https://img.shields.io/badge/lang-ru-green.svg)](README.ru.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Validate](https://github.com/serejaris/personal-corp-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/serejaris/personal-corp-skills/actions/workflows/validate.yml)
 
-> Tips, scripts and workflows for Claude Code
+> Публичные skills и plugin manifests для Claude Code и Codex: Personal Corp, продуктовая работа, AI-операции и агентная разработка.
 
 От [Ris](https://t.me/ris_ai) — пишу про AI-разработку и вайбкодинг
 
-Коллекция кастомизаций, скриптов и воркфлоу для [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+Коллекция санитизированных публичных скиллов, скриптов и воркфлоу для [Claude Code](https://docs.anthropic.com/en/docs/claude-code) и Codex.
+
+## Установка
+
+### Claude Code
+
+В терминале:
+
+```bash
+claude plugin marketplace add serejaris/personal-corp-skills
+claude plugin install personal-corp-skills@personal-corp-skills
+claude plugin details personal-corp-skills
+```
+
+В Claude Code Desktop или interactive `/plugin` flow:
+
+1. Откройте **Plugins** или `/plugin`.
+2. Добавьте marketplace: `serejaris/personal-corp-skills`.
+3. Установите `personal-corp-skills`.
+
+### Codex
+
+В репозитории есть Codex manifest: [.codex-plugin/plugin.json](.codex-plugin/plugin.json).
+Добавьте marketplace из GitHub, затем установите плагин:
+
+```bash
+codex plugin marketplace add serejaris/personal-corp-skills
+codex plugin add personal-corp-skills@personal-corp-skills
+```
+
+После установки откройте новый Codex thread и проверьте:
+
+```text
+Use Personal Corp skills to plan my week.
+```
+
+### Один скилл
+
+Используйте этот вариант, если нужна одна папка скилла:
+
+> Install this skill: `https://github.com/serejaris/personal-corp-skills/tree/main/skills/cc-analytics`
+
+Замените `cc-analytics` на имя любого скилла из таблицы ниже.
 
 ## Skills
 
@@ -22,10 +66,9 @@
 | [design-minimal](./skills/design-minimal/) | Одна HTML-страница в минимальном стиле для дашбордов, брифов, раздаток и отчётов |
 | [gh-issues](./skills/gh-issues/) | Управление GitHub Issues через CLI с хранением контекста сессий |
 | [meeting-copilot](./skills/meeting-copilot/) | Live dashboard для встреч: подготовка, обновление из транскрипта, закрытие с решениями и follow-up |
-| [paperclip-api](./skills/paperclip-api/) | Управление компаниями AI-агентов Paperclip через CLI и REST API |
 | [readme-generator](./skills/readme-generator/) | Человеко-ориентированные README с правильной структурой |
-| [ris-manager](./skills/ris-manager/) | Двусторонний мост между текущей сессией и GitHub Issues |
-| [ris-prioritize](./skills/ris-prioritize/) | Ранжирование бэклогов через RICE, ICE, MoSCoW или Kano |
+| [manager](./skills/manager/) | Двусторонний мост между текущей сессией и GitHub Issues |
+| [prioritize](./skills/prioritize/) | Ранжирование бэклогов через RICE, ICE, MoSCoW или Kano |
 | [html-draft](./skills/html-draft/) | Одна HTML-диаграмма в стиле плоского инженерного чертежа — архитектура, потоки, spec sheets |
 | [tg-bot-ops](./skills/tg-bot-ops/) | Переиспользуемый операционный плейбук для Telegram-ботов и Telegram-to-agent gateways |
 
@@ -66,31 +109,24 @@ graph LR
 | [task-routing](./skills/task-routing/) | Маршрутизация issues в правильный репо через конфиг |
 | [weekly-planning](./skills/weekly-planning/) | Ретро + бэклог — приоритизированные outcomes с матрицей Эйзенхауэра |
 | [weekly-retro](./skills/weekly-retro/) | Структурированное ретро: сбор данных, интервью с основателем, фиксация в issues |
-| [ris-manager](./skills/ris-manager/) | Синк работы сессии в GitHub Issues и cross-repo запросы по задачам |
-| [ris-prioritize](./skills/ris-prioritize/) | Ранжирование требований и бэклогов перед планированием |
+| [manager](./skills/manager/) | Синк работы сессии в GitHub Issues и cross-repo запросы по задачам |
+| [prioritize](./skills/prioritize/) | Ранжирование требований и бэклогов перед планированием |
 
 ## Other
 
 ### [Statusline](./statusline/)
 Кастомный статусбар с отображением затрат, использования контекста и git-ветки с цветовой индикацией.
 
-## Установка
+## Архивные скиллы
 
-### Установить один скилл
+Архивные скиллы сохраняются для справки и не входят в активный набор скиллов
+плагина.
 
-Скажите агенту:
+| Скилл | Примечание |
+|-------|------------|
+| [paperclip-api](./archive/skills/paperclip-api/) | Исторический helper для Paperclip API; сохранён для справки |
 
-> Install this skill: `https://github.com/serejaris/ris-claude-code/tree/main/skills/cc-analytics`
-
-Замените `cc-analytics` на имя любого скилла из таблицы выше.
-
-### Установить все скиллы (плагин)
-
-**Claude Code Desktop:** **+** → **Plugins** → найти `ris-claude-code` → **Install**
-
-**Claude Code CLI:** `/plugin` → **Marketplaces** → **Add** → `serejaris/ris-claude-code` → **Discover** → **Install**
-
-### Вручную
+## Ручная установка
 
 Скиллы — обычные папки. Копируйте всю папку скилла, чтобы не потерять optional
 references и examples:
@@ -108,3 +144,8 @@ cp -r skills/<name> ~/.claude/skills/
 ## Лицензия
 
 MIT
+
+## Безопасность
+
+Секреты, утечки приватных данных и exploitable behavior отправляйте приватно.
+См. [SECURITY.md](SECURITY.md).

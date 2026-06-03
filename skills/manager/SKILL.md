@@ -1,9 +1,15 @@
 ---
-name: ris-manager
-description: Use when need to sync session work into GitHub issues OR query status of an existing track across repos. Two modes — write (end-of-session sync: find issues, update, create with parent epic + W-label) and read (status lookup across repos). Triggers on "/ris-manager", "sync session", "обнови issues", "синкни сессию", "зафиксируй прогресс", "статус задачи", "что по <track>", "есть ли issue по", "track status", "what about <track>".
+name: manager
+description: >-
+  Use when need to sync session work into GitHub issues OR query status of an
+  existing track across repos. Two modes — write (end-of-session sync: find
+  issues, update, create with parent epic + W-label) and read (status lookup
+  across repos). Triggers on "/manager", "sync session", "обнови issues",
+  "синкни сессию", "зафиксируй прогресс", "статус задачи", "что по <track>",
+  "есть ли issue по", "track status", "what about <track>".
 ---
 
-# Ris Manager — bidirectional GitHub issues bridge
+# Manager — bidirectional GitHub issues bridge
 
 Part of the Personal Corp framework — running a one-person business through AI agents.
 
@@ -17,7 +23,7 @@ Bridges session work and GitHub issues in both directions. GitHub issues are the
 Before first use, define this in your project's `CLAUDE.md`:
 
 ```markdown
-## Ris Manager Config
+## Manager Config
 
 ### GitHub owner
 Your GitHub username or org for issue search:
@@ -88,11 +94,11 @@ digraph mode {
 }
 ```
 
-**Signal for write mode:** user said «sync session», «зафиксируй», «обнови issues», OR invoked `/ris-manager` without args at end of session, OR explicitly listed artifacts/changes.
+**Signal for write mode:** user said «sync session», «зафиксируй», «обнови issues», OR invoked `/manager` without args at end of session, OR explicitly listed artifacts/changes.
 
 **Signal for read mode:** user asked a question about state — «what about», «status», «есть ли», «какие issues по».
 
-**Bare `/ris-manager` invocation:** infer artifacts from current conversation context — what tracks were touched, what files were modified/created, what decisions were made. Do NOT ask user to re-list everything. Form brief execution plan (5-15 lines), then execute under the configured authorization mode.
+**Bare `/manager` invocation:** infer artifacts from current conversation context — what tracks were touched, what files were modified/created, what decisions were made. Do NOT ask user to re-list everything. Form brief execution plan (5-15 lines), then execute under the configured authorization mode.
 
 ## Output language
 
@@ -107,7 +113,7 @@ Output language matches the user's input language and project conventions. Techn
 ## When to use vs when NOT
 
 **Use (write mode):**
-- User says "sync session" / "/ris-manager" / "обнови issues по тому что сделал"
+- User says "sync session" / "/manager" / "обнови issues по тому что сделал"
 - End of working session with concrete artifacts (CRM updates, meeting cards, code commits, docs)
 
 **Use (read mode):**
@@ -397,7 +403,7 @@ Manager owns the read-modify-write pattern: `gh issue view` → local body file 
 <one line — what closes this issue>
 
 ---
-Synced by ris-manager from session <YYYY-MM-DD>.
+Synced by manager from session <YYYY-MM-DD>.
 ```
 
 ## Body update template (default)

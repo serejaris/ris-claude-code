@@ -1,9 +1,9 @@
 ---
-name: ris-prioritize
-description: Use when ranking a list of requirements, features, or backlog items using RICE / ICE / MoSCoW / Kano. Built-in decision tree picks the right framework based on data availability and decision context. Output is a transparent matrix, 2×2 Impact/Effort quadrant, and a Sprint allocation proposal. User-invoked only — do NOT auto-trigger. Triggers on "/ris-prioritize", "приоритизация", "ранжируй бэклог", "RICE-анализ", "prioritize requirements", "RICE", "ICE", "MoSCoW", "Kano", "rank backlog".
+name: prioritize
+description: Use when ranking a list of requirements, features, or backlog items using RICE / ICE / MoSCoW / Kano. Built-in decision tree picks the right framework based on data availability and decision context. Output is a transparent matrix, 2×2 Impact/Effort quadrant, and a Sprint allocation proposal. User-invoked only — do NOT auto-trigger. Triggers on "/prioritize", "приоритизация", "ранжируй бэклог", "RICE-анализ", "prioritize requirements", "RICE", "ICE", "MoSCoW", "Kano", "rank backlog".
 ---
 
-# ris-prioritize — Rank requirements with RICE / ICE / MoSCoW / Kano
+# prioritize — Rank requirements with RICE / ICE / MoSCoW / Kano
 
 Part of the Personal Corp framework — running a one-person business through AI agents.
 
@@ -20,10 +20,10 @@ Rank a list of requirements using a structured framework. A built-in decision tr
 
 ## Optional config
 
-Most of the skill works out-of-box. If you want stable defaults across runs, add an `## Ris Prioritize Config` section to your project's `CLAUDE.md`:
+Most of the skill works out-of-box. If you want stable defaults across runs, add an `## Prioritize Config` section to your project's `CLAUDE.md`:
 
 ```markdown
-## Ris Prioritize Config
+## Prioritize Config
 
 ### Default framework (optional)
 If unset, the skill auto-recommends per the decision table below.

@@ -1,0 +1,26 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate repository
+        run: |
+          python3 scripts/validate_repo.py
+          python3 -m json.tool .codex-plugin/plugin.json >/dev/null
+          python3 -m json.tool .claude-plugin/plugin.json >/dev/null
+          python3 -m json.tool .claude-plugin/marketplace.json >/dev/null
+          python3 -m json.tool .agents/plugins/marketplace.json >/dev/null
+          git diff --check

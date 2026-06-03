@@ -3,17 +3,17 @@
 Date: 2026-06-01
 Mode: full loop
 Source routing: internal
-Target repo: `ris-claude-code`
+Target repo: `personal-corp-skills`
 Target artifact: `skills/art-director/`
 Final status: complete-after-recheck
 
 ## Intake
 
-Request: publish the `corp-media` `art-director` skill into the public `ris-claude-code` repository, clean it from private data, and place it in a media-related section.
+Request: publish the `corp-media` `art-director` skill into the public `personal-corp-skills` repository, clean it from private data, and place it in a media-related section.
 
 Quality standard:
 
-- `ris-claude-code` skill package contract: `SKILL.md`, `README.md`, `README.ru.md`.
+- `personal-corp-skills` skill package contract: `SKILL.md`, `README.md`, `README.ru.md`.
 - Root README EN/RU sync.
 - New skill release uses minor version bump.
 - Public artifact must use generic paths, generic examples, and privacy-safe wording.
@@ -25,7 +25,7 @@ Quality standard:
 | 019e845f-c248-7562-aaac-3bf6063704e7 | target repo placement | internal | use `skills/art-director/`, place under Design and Media Skills | applied |
 | 019e845f-e7e8-7371-bcf0-4d224d996d23 | privacy cleanup | internal | remove `corp-media`, platform-specific pipeline, concrete internal paths | applied |
 | 019e8460-09bd-79f1-987d-871175b37ca7 | public repo conventions | internal | add required README files, update changelog and plugin metadata | applied |
-| 019e8460-2b0f-79e3-a8cd-0818f3afe670 | git boundary | internal | `ris-claude-code` clean; `corp-media` dirty and left untouched | applied |
+| 019e8460-2b0f-79e3-a8cd-0818f3afe670 | git boundary | internal | `personal-corp-skills` clean; `corp-media` dirty and left untouched | applied |
 
 ## Researcher Cycle
 
@@ -59,8 +59,7 @@ Changed files:
 - `README.md`
 - `README.ru.md`
 - `CHANGELOG.md`
-- `.claude-plugin/plugin.json`
-- `.claude-plugin/marketplace.json`
+- `.codex-plugin/plugin.json`
 - `research/2026-06-01-art-director-publication-loop.md`
 
 ## Critic Cycle
@@ -86,8 +85,7 @@ Changed files:
 Commands run:
 
 ```bash
-python3 -m json.tool .claude-plugin/plugin.json >/dev/null
-python3 -m json.tool .claude-plugin/marketplace.json >/dev/null
+python3 -m json.tool .codex-plugin/plugin.json >/dev/null
 ruby -e 'require "yaml"; ...'
 for d in skills/*; do test -f "$d/SKILL.md"; test -f "$d/README.md"; test -f "$d/README.ru.md"; done
 for d in skills/*; do rg -q "\[${name}\]\(\./skills/${name}/\)" README.md README.ru.md; done
@@ -107,7 +105,7 @@ Applied:
 - Added legend, current selection, next iteration, and image slot to the starter template.
 - Added first-run bootstrap commands.
 - Added feedback, parent, terminal status, diversity gate, and DOM validation requirements.
-- Added `ris-manager` and `ris-prioritize` to README inventories.
+- Added `manager` and `prioritize` to README inventories.
 
 Skipped:
 

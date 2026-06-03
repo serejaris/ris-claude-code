@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a broken skill, script, or documentation path.
+title: "fix: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include private data, secrets, tokens, passcodes, or private URLs.
+  - type: input
+    id: path
+    attributes:
+      label: Affected path
+      description: Example: skills/name/SKILL.md
+      placeholder: skills/name/SKILL.md
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is broken or misleading?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen instead?
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Checks run
+      description: Paste relevant command output if available.
+      placeholder: python3 scripts/validate_repo.py

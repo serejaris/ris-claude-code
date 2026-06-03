@@ -36,7 +36,7 @@ Reads all available project files (architecture, data, strategy, configs, issues
 
 Tell your agent:
 
-> Install this skill: `https://github.com/serejaris/ris-claude-code/tree/main/skills/product-data-audit`
+> Install this skill: `https://github.com/serejaris/personal-corp-skills/tree/main/skills/product-data-audit`
 
 Or copy `SKILL.md` + `references/` to `~/.claude/skills/product-data-audit/`.
 

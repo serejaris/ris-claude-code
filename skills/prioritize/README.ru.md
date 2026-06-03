@@ -1,4 +1,4 @@
-# Ris Prioritize Skill
+# Prioritize Skill
 
 ![Иллюстрация скилла](assets/illustration.png)
 
@@ -29,14 +29,14 @@
 ## Установка
 
 ```bash
-cp -r skills/ris-prioritize ~/.claude/skills/
+cp -r skills/prioritize ~/.claude/skills/
 ```
 
 После этого скилл доступен в Claude Code.
 
 ## Настройка (опционально)
 
-Скилл работает из коробки — спросит недостающие параметры при первом запуске. Если хочешь стабильные дефолты между прогонами, добавь в `CLAUDE.md` проекта секцию `## Ris Prioritize Config`:
+Скилл работает из коробки — спросит недостающие параметры при первом запуске. Если хочешь стабильные дефолты между прогонами, добавь в `CLAUDE.md` проекта секцию `## Prioritize Config`:
 
 | Конфиг | Назначение |
 |--------|-----------|
@@ -54,7 +54,7 @@ cp -r skills/ris-prioritize ~/.claude/skills/
 
 > «Приоритизируй мой бэклог. Список в `docs/backlog.md`, ресурс — 20 person-days в спринт, фокус квартала — retention.»
 
-Или через slash-команду: `/ris-prioritize`
+Или через slash-команду: `/prioritize`
 
 Или коротко, если конфиг уже заполнен:
 

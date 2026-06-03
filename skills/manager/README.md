@@ -1,4 +1,4 @@
-# Ris Manager Skill
+# Manager Skill
 
 ![Skill illustration](assets/illustration.png)
 
@@ -26,7 +26,7 @@ The skill closes all four gaps: pre-flight read of your priorities index, cross-
 ## When to use
 
 **Write mode** — at the end of a working session:
-- Say "sync session" / `/ris-manager` / "update issues for what I did"
+- Say "sync session" / `/manager` / "update issues for what I did"
 - Skill infers artifacts from session context, shows the plan, executes.
 
 **Read mode** — at the start or middle of a session:
@@ -47,14 +47,14 @@ The skill closes all four gaps: pre-flight read of your priorities index, cross-
 ## Installation
 
 ```bash
-cp -r skills/ris-manager ~/.claude/skills/
+cp -r skills/manager ~/.claude/skills/
 ```
 
 The skill is then available in Claude Code.
 
 ## Setup
 
-Add a `## Ris Manager Config` section to your project's `CLAUDE.md`. Minimal config:
+Add a `## Manager Config` section to your project's `CLAUDE.md`. Minimal config:
 
 | Config | Purpose |
 |--------|---------|
@@ -79,7 +79,7 @@ Without config the skill still works, but less targeted: it'll ask for owner / r
 
 or
 
-> `/ris-manager`
+> `/manager`
 
 or
 

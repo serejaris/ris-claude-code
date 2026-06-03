@@ -1,0 +1,20 @@
+{
+  "name": "personal-corp-skills",
+  "interface": {
+    "displayName": "Personal Corp Skills"
+  },
+  "plugins": [
+    {
+      "name": "personal-corp-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/personal-corp-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

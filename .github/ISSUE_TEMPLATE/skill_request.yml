@@ -1,0 +1,38 @@
+name: Skill request
+description: Propose a new reusable public skill.
+title: "feat: add "
+labels: ["enhancement", "skill"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Public skills must be reusable and sanitized. Do not include private data.
+  - type: input
+    id: skill_name
+    attributes:
+      label: Skill name
+      description: Use lowercase kebab-case.
+      placeholder: example-skill
+    validations:
+      required: true
+  - type: textarea
+    id: trigger
+    attributes:
+      label: When should the skill trigger?
+      description: Describe the user request or workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Reusable value
+      description: Why should this live in the public skill library?
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Sanitization notes
+      description: List any private details that must be removed or replaced with placeholders.
+    validations:
+      required: true

@@ -1,15 +1,59 @@
-# Claude Code Tips & Tricks
+# Personal Corp Skills
 
 [![en](https://img.shields.io/badge/lang-en-blue.svg)](README.md)
 [![ru](https://img.shields.io/badge/lang-ru-green.svg)](README.ru.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Validate](https://github.com/serejaris/personal-corp-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/serejaris/personal-corp-skills/actions/workflows/validate.yml)
 
-> Tips, scripts and workflows for Claude Code
+> Public skills and plugin manifests for Claude Code and Codex: Personal Corp, product work, AI operations, and agent-assisted development.
 
 By [Ris](https://t.me/ris_ai) — AI development & vibecoding
 
-Русская версия: [README.ru.md](README.ru.md). Коротко: это публичный набор Claude Code skills, hooks, statusline и рабочих приёмов для агентной разработки.
+Русская версия: [README.ru.md](README.ru.md).
 
-A collection of customizations, scripts, and workflows for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+A collection of sanitized public skills, scripts, and workflows for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and Codex.
+
+## Install
+
+### Claude Code
+
+Terminal:
+
+```bash
+claude plugin marketplace add serejaris/personal-corp-skills
+claude plugin install personal-corp-skills@personal-corp-skills
+claude plugin details personal-corp-skills
+```
+
+Claude Code Desktop or interactive `/plugin` flow:
+
+1. Open **Plugins** or `/plugin`.
+2. Add marketplace: `serejaris/personal-corp-skills`.
+3. Install `personal-corp-skills`.
+
+### Codex
+
+This repo includes a Codex plugin manifest at [.codex-plugin/plugin.json](.codex-plugin/plugin.json).
+Add the marketplace from GitHub, then install the plugin:
+
+```bash
+codex plugin marketplace add serejaris/personal-corp-skills
+codex plugin add personal-corp-skills@personal-corp-skills
+```
+
+After installation, start a new Codex thread and try:
+
+```text
+Use Personal Corp skills to plan my week.
+```
+
+### Single Skill
+
+Use this when you want one skill folder instead of the whole plugin:
+
+> Install this skill: `https://github.com/serejaris/personal-corp-skills/tree/main/skills/cc-analytics`
+
+Replace `cc-analytics` with any skill name from the table below.
 
 ## Skills
 
@@ -24,10 +68,9 @@ A collection of customizations, scripts, and workflows for [Claude Code](https:/
 | [design-minimal](./skills/design-minimal/) | Standalone minimal HTML pages for dashboards, briefs, handouts, and reports |
 | [gh-issues](./skills/gh-issues/) | Manage GitHub Issues via CLI with session context |
 | [meeting-copilot](./skills/meeting-copilot/) | Live meeting dashboard: prepare, update from transcript chunks, close with decisions and follow-ups |
-| [paperclip-api](./skills/paperclip-api/) | Manage Paperclip AI agent companies via CLI and REST API |
 | [readme-generator](./skills/readme-generator/) | Human-focused README files with proper structure |
-| [ris-manager](./skills/ris-manager/) | Bidirectional bridge between the current session and GitHub Issues |
-| [ris-prioritize](./skills/ris-prioritize/) | Rank backlogs with RICE, ICE, MoSCoW, or Kano and produce a decision log |
+| [manager](./skills/manager/) | Bidirectional bridge between the current session and GitHub Issues |
+| [prioritize](./skills/prioritize/) | Rank backlogs with RICE, ICE, MoSCoW, or Kano and produce a decision log |
 | [html-draft](./skills/html-draft/) | One self-contained HTML diagram in flat engineering blueprint style — architecture, flows, spec sheets |
 | [tg-bot-ops](./skills/tg-bot-ops/) | Reusable operations playbook for Telegram bots and Telegram-to-agent gateways |
 
@@ -68,31 +111,24 @@ graph LR
 | [task-routing](./skills/task-routing/) | Route issues to the correct repo using routing config |
 | [weekly-planning](./skills/weekly-planning/) | Retro findings + backlog → prioritized outcomes with Eisenhower matrix |
 | [weekly-retro](./skills/weekly-retro/) | Structured retrospective: gather data, interview founder, capture findings |
-| [ris-manager](./skills/ris-manager/) | Sync session work into GitHub Issues and query cross-repo task state |
-| [ris-prioritize](./skills/ris-prioritize/) | Rank requirements and backlogs before planning |
+| [manager](./skills/manager/) | Sync session work into GitHub Issues and query cross-repo task state |
+| [prioritize](./skills/prioritize/) | Rank requirements and backlogs before planning |
 
 ## Other
 
 ### [Statusline](./statusline/)
 Custom statusline showing costs, context usage, and git branch with color-coded indicators.
 
-## Installation
+## Archived Skills
 
-### Install a single skill
+Archived skills are preserved for reference and are not part of the active
+plugin skill set.
 
-Tell your agent:
+| Skill | Notes |
+|-------|-------|
+| [paperclip-api](./archive/skills/paperclip-api/) | Historical Paperclip API helper; kept for reference |
 
-> Install this skill: `https://github.com/serejaris/ris-claude-code/tree/main/skills/cc-analytics`
-
-Replace `cc-analytics` with any skill name from the table above.
-
-### Install all skills (plugin)
-
-**Claude Code Desktop:** **+** → **Plugins** → search `ris-claude-code` → **Install**
-
-**Claude Code CLI:** `/plugin` → **Marketplaces** → **Add** → `serejaris/ris-claude-code` → **Discover** → **Install**
-
-### Manual
+## Manual Installation
 
 Skills are plain folders. Copy the whole skill directory so optional references
 and examples are preserved:
@@ -110,3 +146,8 @@ cp -r skills/<name> ~/.claude/skills/
 ## License
 
 MIT
+
+## Security
+
+Please report secrets, private data exposure, or exploitable behavior privately.
+See [SECURITY.md](SECURITY.md).

@@ -48,7 +48,16 @@ We follow [Semantic Versioning](https://semver.org/):
 2. Create feature branch: `git checkout -b feat/my-feature`
 3. Follow commit conventions
 4. Update `CHANGELOG.md` under `[Unreleased]`
-5. Submit PR with clear description
+5. Run repository validation:
+
+```bash
+python3 scripts/validate_repo.py
+claude plugin validate .claude-plugin/marketplace.json
+claude plugin tag --dry-run --force .
+git diff --check
+```
+
+6. Submit PR with clear description
 
 ## Adding Skills
 
@@ -93,6 +102,7 @@ What goes wrong + fixes.
 - [ ] README.ru.md (Russian)
 - [ ] Added to main README.md skills list
 - [ ] Entry in CHANGELOG.md under `[Unreleased]`
+- [ ] `python3 scripts/validate_repo.py` passes
 
 ## Releases
 
@@ -134,3 +144,9 @@ cp -r skills/name ~/.claude/skills/
 ## Questions?
 
 Open an issue or reach out on [Telegram](https://t.me/ris_ai).
+
+## Security
+
+Do not include real credentials, private URLs, personal data, or customer data in
+issues, pull requests, examples, fixtures, screenshots, or release notes. Report
+security concerns privately using [SECURITY.md](SECURITY.md).

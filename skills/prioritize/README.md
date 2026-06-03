@@ -1,4 +1,4 @@
-# Ris Prioritize Skill
+# Prioritize Skill
 
 ![Skill illustration](assets/illustration.png)
 
@@ -29,14 +29,14 @@ Not for: a single task (nothing to prioritize), crisis decisions with no time to
 ## Installation
 
 ```bash
-cp -r skills/ris-prioritize ~/.claude/skills/
+cp -r skills/prioritize ~/.claude/skills/
 ```
 
 The skill is then available in Claude Code.
 
 ## Setup (optional)
 
-The skill works out-of-box — it asks for missing parameters on first run. For stable defaults across runs, add a `## Ris Prioritize Config` section to your project's `CLAUDE.md`:
+The skill works out-of-box — it asks for missing parameters on first run. For stable defaults across runs, add a `## Prioritize Config` section to your project's `CLAUDE.md`:
 
 | Config | Purpose |
 |--------|---------|
@@ -54,7 +54,7 @@ Tell the agent in natural language:
 
 > "Prioritize my backlog. List is in `docs/backlog.md`, capacity is 20 person-days per Sprint, quarter focus is retention."
 
-Or use the slash command: `/ris-prioritize`
+Or use the slash command: `/prioritize`
 
 Or, if config is set:
 

@@ -8,9 +8,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Public repository hygiene: `SECURITY.md`, `CODE_OF_CONDUCT.md`, issue
+  templates, Dependabot config, validation workflow, and
+  `scripts/validate_repo.py`.
 - Skill README illustrations for every published skill, using deliberately clumsy MS Paint-style generated assets.
 
 ### Changed
+- Moved `paperclip-api` from active skills to `archive/skills/paperclip-api`.
+- Renamed public skill identifiers `ris-manager` → `manager` and
+  `ris-prioritize` → `prioritize`, including folders, frontmatter, slash
+  triggers, install paths, and README tables.
+- Moved Claude Code, Codex, and single-skill installation guidance to the top
+  of both READMEs.
+- Added a Codex marketplace manifest at `.agents/plugins/marketplace.json`.
+- Added `plugins/personal-corp-skills` as a repository-root symlink so Codex
+  marketplace discovery can install the root plugin through the expected
+  `./plugins/<plugin-name>` path.
+- Added current `.codex-plugin/plugin.json` metadata while keeping
+  `.claude-plugin` metadata for Claude Code compatibility.
 - Renamed **ris-draft** to **html-draft** across skill folder, docs, and invocation examples.
 
 ## [1.20.0] - 2026-06-01
@@ -58,9 +73,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Extracts questions, topic progress, decisions, risks, action items, and follow-up drafts
   - Includes privacy rules for sanitized public exports
 - **ris-draft** skill — generate one self-contained HTML page with a technical diagram in flat engineering blueprint style
-  - Strict visual rules: flat, outlined, monochrome, system fonts only, no external CDN
+  - Strict visual rules: flat, outlined, monochrome, system fonts, Tailwind v4 browser CDN, and D3 v7 CDN
   - Supports four diagram types: architecture, system flow, technical spec sheet, component map
-  - All CSS inline; opens offline in any browser
+  - Complete HTML document ready to open in a browser
   - Bilingual docs (README.md + README.ru.md, Russian default)
 
 ## [1.15.1] - 2026-03-29
@@ -258,28 +273,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.20.0...HEAD
-[1.20.0]: https://github.com/serejaris/ris-claude-code/compare/v1.19.0...v1.20.0
-[1.19.0]: https://github.com/serejaris/ris-claude-code/compare/v1.18.0...v1.19.0
-[1.18.0]: https://github.com/serejaris/ris-claude-code/compare/v1.17.0...v1.18.0
-[1.17.0]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...v1.17.0
-[1.16.0]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...485a46c
-[1.15.1]: https://github.com/serejaris/ris-claude-code/compare/v1.15.0...v1.15.1
-[1.15.0]: https://github.com/serejaris/ris-claude-code/compare/v1.14.0...v1.15.0
-[1.14.0]: https://github.com/serejaris/ris-claude-code/compare/v1.13.0...v1.14.0
-[1.13.0]: https://github.com/serejaris/ris-claude-code/compare/v1.12.0...v1.13.0
-[1.12.0]: https://github.com/serejaris/ris-claude-code/compare/v1.11.0...v1.12.0
-[1.11.0]: https://github.com/serejaris/ris-claude-code/compare/v1.10.0...v1.11.0
-[1.10.0]: https://github.com/serejaris/ris-claude-code/compare/v1.9.0...v1.10.0
-[1.9.0]: https://github.com/serejaris/ris-claude-code/compare/v1.8.0...v1.9.0
-[1.8.0]: https://github.com/serejaris/ris-claude-code/compare/v1.7.0...v1.8.0
-[1.7.0]: https://github.com/serejaris/ris-claude-code/compare/v1.6.0...v1.7.0
-[1.6.0]: https://github.com/serejaris/ris-claude-code/compare/v1.5.1...v1.6.0
-[1.5.1]: https://github.com/serejaris/ris-claude-code/compare/v1.5.0...v1.5.1
-[1.5.0]: https://github.com/serejaris/ris-claude-code/compare/v1.4.0...v1.5.0
-[1.4.0]: https://github.com/serejaris/ris-claude-code/compare/v1.3.0...v1.4.0
-[1.3.0]: https://github.com/serejaris/ris-claude-code/compare/v1.2.1...v1.3.0
-[1.2.1]: https://github.com/serejaris/ris-claude-code/compare/v1.2.0...v1.2.1
-[1.2.0]: https://github.com/serejaris/ris-claude-code/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/serejaris/ris-claude-code/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/serejaris/ris-claude-code/releases/tag/v1.0.0
+[Unreleased]: https://github.com/serejaris/personal-corp-skills/compare/v1.20.0...HEAD
+[1.20.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.19.0...v1.20.0
+[1.19.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.18.0...v1.19.0
+[1.18.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.17.0...v1.18.0
+[1.17.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.15.1...v1.17.0
+[1.16.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.15.1...485a46c
+[1.15.1]: https://github.com/serejaris/personal-corp-skills/compare/v1.15.0...v1.15.1
+[1.15.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.14.0...v1.15.0
+[1.14.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.13.0...v1.14.0
+[1.13.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.12.0...v1.13.0
+[1.12.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.11.0...v1.12.0
+[1.11.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.10.0...v1.11.0
+[1.10.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.9.0...v1.10.0
+[1.9.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.8.0...v1.9.0
+[1.8.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.7.0...v1.8.0
+[1.7.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.6.0...v1.7.0
+[1.6.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.5.1...v1.6.0
+[1.5.1]: https://github.com/serejaris/personal-corp-skills/compare/v1.5.0...v1.5.1
+[1.5.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.4.0...v1.5.0
+[1.4.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.3.0...v1.4.0
+[1.3.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.2.1...v1.3.0
+[1.2.1]: https://github.com/serejaris/personal-corp-skills/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/serejaris/personal-corp-skills/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/serejaris/personal-corp-skills/releases/tag/v1.0.0

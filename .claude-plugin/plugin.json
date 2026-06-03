@@ -1,15 +1,14 @@
 {
-  "name": "ris-claude-code",
-  "description": "Personal Corp framework: run your business with AI agents through GitHub, department repos, Telegram, agent gateways, and media/art-direction workflows",
+  "name": "personal-corp-skills",
+  "description": "Personal Corp framework: run your business with AI agents through GitHub, department repos, Telegram, agent gateways, html-draft diagrams, and media/art-direction workflows",
   "version": "1.20.0",
   "author": {
     "name": "Sereja Ris",
     "email": "ris@sereja.tech",
     "url": "https://sereja.tech"
   },
-  "homepage": "https://github.com/serejaris/ris-claude-code",
-  "repository": "https://github.com/serejaris/ris-claude-code",
+  "homepage": "https://github.com/serejaris/personal-corp-skills",
+  "repository": "https://github.com/serejaris/personal-corp-skills",
   "license": "MIT",
-  "keywords": ["personal-corp", "founder", "ai-agents", "business-ops", "department-ops", "corp-new", "weekly-planning", "retro", "meeting-copilot", "telegram", "telegram-bot", "bot-ops", "agent-gateway", "media", "art-direction", "design", "html-draft"],
-  "category": "productivity"
+  "keywords": ["personal-corp", "founder", "ai-agents", "business-ops", "department-ops", "corp-new", "weekly-planning", "retro", "meeting-copilot", "telegram", "telegram-bot", "bot-ops", "agent-gateway", "media", "art-direction", "design", "html-draft"]
 }
